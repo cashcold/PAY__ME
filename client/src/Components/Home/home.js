@@ -26,7 +26,7 @@ class HomeMain extends Component {
                         <div className="about__box__1">
                             <i class="fas fa-signal fa-3x"></i>
                             <h3>203</h3>
-                            <h3>Now Online</h3>
+                            <h3>Now Online...</h3>
                         </div>
                         <div className="about__box__1">
                             <i class="fas fa-users fa-3x"></i>
