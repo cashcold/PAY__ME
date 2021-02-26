@@ -30,7 +30,7 @@
     background-image: linear-gradient(to bottom, #d4e20a 0%, #ff1010 100%);;
 }
 .btn-join-us{
-    background-color: #DECDF6;
+    background-color: #DECDF6; 
 }
 .btn-login-in{
     background-color: #F9991B;
@@ -38,6 +38,9 @@
 }
 .toggle__bar{
     display: none;
+}
+.logoImg:hover{
+    cursor: pointer;
 }
 
 

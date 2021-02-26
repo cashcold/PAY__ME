@@ -25,6 +25,13 @@ class Navbar extends Component {
             
         }
         ToggleBtn()
+
+        const LogoRedirect = ()=>{
+            document.querySelector('.logoImg').addEventListener('click',()=>{
+                window.location = '/'
+            })
+        }
+        LogoRedirect()
     }
     render() { 
         return ( 

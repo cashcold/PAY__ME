@@ -1,14 +1,46 @@
 import React, { Component } from 'react';
 import './style.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 class HomeMain extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
+
+    componentDidMount(){
+        const welcome__msg = ()=>{
+            setTimeout(()=>{
+                toast.dark(
+                    <div className='wlcome'>
+                        <a href='/register' className='btn btn-join-us'>Register</a>
+                        <a href='/login' className='btn btn-login-in'>Login</a>
+                    </div>
+                )
+            },8000)
+        }
+        welcome__msg()
+    }
     render() { 
         return ( 
             <div className='home__main'>
+                <ToastContainer
+                position="top-center"
+                autoClose={false}
+                newestOnTop
+                closeOnClick
+                rtl
+                pauseOnFocusLoss
+                draggable/>
                 <section className='home__A'>
+                    <div className="flow__text">
+                    <marquee className='marqueeText'>
+                           <div className='litcoin'>
+                               
+                           </div>
+                       </marquee>
+                    </div>
+                    
                     <div className="welcome__info">
                         <div className="welcome__img">
                             <img src={require('../../images/sliderthumb-min.png')}/>
@@ -241,6 +273,9 @@ class HomeMain extends Component {
                          <img src={require('../../images/paymenticon5-min.png')}/>
                          <img src={require('../../images/paymenticon6-min.png')}/>
                     </div>
+                </section>
+                <section className='api'>
+                <iframe  height="500" width="1140" src="https://www.widgets.investing.com/top-cryptocurrencies?theme=darkTheme&roundedCorners=true" width="100%" height="100%" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
                 </section>
             </div>
          );
