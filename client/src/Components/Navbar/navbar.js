@@ -37,13 +37,13 @@ class Navbar extends Component {
                        <div className='nav__links animate__animated animate__slower animate__bounceInDown'>
                            <ul className='links'>
                                <li><a href='/'>HOME</a></li>
-                               <li><a href='/'>ABOUT US</a></li>
-                               <li><a href='/'>GET STARTED</a></li>
-                               <li><a href='/'>AFFILIATE</a></li>
-                               <li><a href='/'>FAQ</a></li>
-                               <li><a href='/'>SUPPORT</a></li>
-                                <a href='' className='btn btn-login-in'>Login</a> 
-                                <a href='' className='btn btn-join-us'>Join-us</a> 
+                               <li><a href='/about-us'>ABOUT US</a></li>
+                               <li><a href='/getstart'>GET STARTED</a></li>
+                               <li><a href='/affiliate'>AFFILIATE</a></li>
+                               <li><a href='/FQA'>FAQ</a></li>
+                               <li><a href='/contact-us'>SUPPORT</a></li>
+                                <a href='/login' className='btn btn-login-in'>Login</a> 
+                                <a href='/register' className='btn btn-join-us'>Register</a> 
                            </ul>
                        </div>
                        <div className='aboyt__toggle '>

@@ -1,0 +1,38 @@
+.affiliate__main{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../images/5039684.jpg');
+    background-position: center;
+    background-size: cover;
+    
+}
+.affiliate__main span{
+    color:  #F8941D;
+}
+.affiliate__main h1{
+    padding-top: 4em;
+    
+}
+
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .affiliate__main h1{
+        padding-top: 3em;
+        
+    }
+   
+    .reffer__comm__affiliate{
+        margin-top: -3.5em;
+    }
+   
+    
+
+}

@@ -1,0 +1,55 @@
+.get__start__main{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../../images/5039684.jpg');
+    background-position: center;
+    background-size: cover;
+    
+}
+.start__box__1{
+    padding: 4em 0;
+}
+.start__box__1 h5{
+    padding: 2em;
+    min-height: 30vh;
+    background-color: #3C1054;
+    line-height: 1.5em;
+    width: 80%;
+    margin: 0 auto;
+}
+.start__box__1 h1{
+    padding-bottom: 2em;
+}
+.start__box__1 span{
+    color:  #F8941D;
+}
+.how__work__getstart{
+    padding-bottom: 4em;
+}
+.getRegister{
+    padding: 5em 0;
+}
+.getRegister h3{
+    padding-bottom: 1em;
+} 
+
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .start__box__1 h5{
+        padding: 2em;
+        min-height: 30vh;
+        background-color: #3C1054;
+        line-height: 1.5em;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+}

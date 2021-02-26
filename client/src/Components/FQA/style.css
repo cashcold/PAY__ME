@@ -1,0 +1,33 @@
+.FQA{
+    width: 100%;
+    color: white;
+    background-color: black;
+    padding: 4em 0;
+    background-position: center;
+    background-size: cover;
+}
+.terms h3{
+    color: red;
+}
+.terms{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 4em;
+}
+@media screen and (max-width: 768px){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .terms{
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 4em;
+    }
+    
+}

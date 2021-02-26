@@ -1,0 +1,106 @@
+
+.registerLogo img{
+    width: 200px;
+}
+.registerLogo{
+    margin-top: 30px;
+    display: flex;
+}
+.formMain table tr{
+    margin: 20px;
+}
+.formMain table label{
+    margin: 20px;
+}
+.formMain table td{
+    margin: 20px;
+}
+.formMain{
+    margin-left: 7%;
+    margin-top: 30px;
+}
+.formMain input{
+    width: 320px;
+    height: 50px;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+}
+.upfontLine{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+}
+.upfontLine2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lastUpFont{
+    display: flex;
+}
+.lastUpFont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lastUp{
+    display: flex;
+}
+.lastUp p{
+    margin: 10px;
+}
+.register{
+    margin: 40px 0;
+    height: 800px;
+}
+.formMain input{
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid white;
+}
+input:focus{
+    outline: none;
+}
+.register{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #240949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    margin-top: -1em;
+    margin-bottom: -1em;
+    padding-bottom: 4em;
+}
+.registerLogo h1{
+    padding-top: 1em;
+    
+    background-color: blue;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #0ae276 0%, #ff1010 100%);;
+}
+
+
+@media screen and (max-width: 500px){
+    .registerLogo h1{
+        font-size: 20px;
+        margin-left: 40px;
+    }
+   
+    .formMain input{
+        width: 300px;
+        height: 40px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+    }
+    .lastUpFont{
+        margin: 30px;
+    }
+}

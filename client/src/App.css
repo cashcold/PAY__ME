@@ -18,6 +18,12 @@ a:hover{
     text-decoration: none;
     color: white;
 }
+p{
+    font-weight: bold;
+}
+.btn{
+    padding: 1em 1.2em;
+}
 body{
     text-align: center;
     color: white;
@@ -28,9 +34,9 @@ body{
     /* background-position: 10%; */
 }
 
-.mainApp{
-    /* margin-bottom: 100% */
-}
+/* .mainApp{
+    margin-bottom: 100%
+} */
 
 
  
