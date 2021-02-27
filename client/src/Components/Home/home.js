@@ -274,8 +274,8 @@ class HomeMain extends Component {
                          <img src={require('../../images/paymenticon6-min.png')}/>
                     </div>
                 </section>
-                <section className='api'>
-                <iframe  height="500" width="1140" src="https://www.widgets.investing.com/top-cryptocurrencies?theme=darkTheme&roundedCorners=true" width="100%" height="100%" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
+                <section>
+                <iframe  className='api'  height="500" width="1140" src="https://www.widgets.investing.com/top-cryptocurrencies?theme=darkTheme&roundedCorners=true" width="100%" height="100%" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe>
                 </section>
             </div>
          );

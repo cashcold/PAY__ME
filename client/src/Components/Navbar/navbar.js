@@ -39,7 +39,7 @@ class Navbar extends Component {
                <section className='navMain'>
                    <nav>
                        <div className='logoImg animate__animated animate__slower animate__flash'>
-                         <h1><i class="fas fa-ruble-sign fa-2x"></i>ayItForward</h1>
+                         <h1>PayItForward</h1>
                        </div>
                        <div className='nav__links animate__animated animate__slower animate__bounceInDown'>
                            <ul className='links'>
@@ -55,7 +55,9 @@ class Navbar extends Component {
                        </div>
                        <div className='aboyt__toggle '>
                             <div className='toggle__bar animate__animated animate__slower animate__zoomInDown'>
-                                <i class="fas fa-bars fa-3x"></i>
+                                <div className='toggle'></div>
+                                <div className='toggle'></div>
+                                <div className='toggle'></div>
                             </div>
                      </div>
                      </nav>

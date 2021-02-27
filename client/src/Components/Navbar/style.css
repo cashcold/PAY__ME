@@ -27,7 +27,7 @@
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
-    background-image: linear-gradient(to bottom, #d4e20a 0%, #ff1010 100%);;
+    background-image: linear-gradient(to right, #d4e20a 0%, #ff1010 100%);;
 }
 .btn-join-us{
     background-color: #DECDF6; 
@@ -38,9 +38,16 @@
 }
 .toggle__bar{
     display: none;
+    margin-top: -1em;
 }
 .logoImg:hover{
     cursor: pointer;
+}
+.toggle__bar div{
+    background-color: white;
+    width: 30px;
+    height: 5px;
+    margin: 4px 0;
 }
 
 
