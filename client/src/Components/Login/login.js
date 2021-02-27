@@ -33,7 +33,8 @@ class LoginMain extends Component {
             toast.warning('Enter Password')
         }
         event.preventDefault()
-        axios.post( "http://localhost:3000/users/login",userLogin).then(res => { 
+        // http://localhost:3000
+        axios.post( "/users/login",userLogin).then(res => { 
             sessionStorage.setItem('x-access-token',JSON.stringify(res.data))
             return res.data;
         }).then(res => {toast.success("Login Successful !", setTimeout(()=>{
@@ -42,8 +43,8 @@ class LoginMain extends Component {
             
             });}).then(res => window.location="/dashboard" ).catch(err => {toast.error(err.response.data, {
             position: toast.POSITION.TOP_RIGHT
-          });
-    });
+         });
+        });
         
     }
     render() { 
