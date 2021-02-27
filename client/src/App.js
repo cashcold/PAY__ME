@@ -12,6 +12,7 @@ import ContactMain from './Components/Contact-us/contact-us';
 import RegisterUser from './Components/Register/register';
 import LoginMain from './Components/Login/login';
 import FQA from './Components/FQA/fqa';
+import DashboardMain from './Components/Dashboard/dashboard';
 
 class MainApp extends Component {
     constructor(props) {
@@ -36,6 +37,7 @@ class MainApp extends Component {
                               <Route path='/register' exact component={RegisterUser}/> 
                               <Route path='/login' exact component={LoginMain}/> 
                               <Route path='/FQA' exact component={FQA}/> 
+                              <Route path='/dashboard' exact component={DashboardMain}/> 
                               
                            </Switch>
                         </div>
