@@ -1,13 +1,46 @@
 import React, { Component } from 'react';
 import './style.css'
+import jwt_decode from 'jwt-decode'
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import axios from 'axios' 
+
 class DashboardMain extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            full_Name: '',
+            user_Name: '',
+            ip_address: '',
+            bitcoin: '',
+            bitcoinCash: '',
+            id: '',
+            ethereum: '',
+            date: '',
+            accountBalance: '',
+            activetDeposit: '',
+            login: '',
+            plan: ''
+         }
+    }
+    componentDidMount(){
+        const token = sessionStorage.getItem('x-access-token')
+        const decoded = jwt_decode(token)
+        this.setState({
+            id: decoded.user_id,
+            full_Name: decoded.full_Name,
+            user_Name: decoded.user_Name,
+            ip_address: decoded.ip_address,
+            accountBalance: decoded.accountBalance,
+            activetDeposit: decoded.activetDeposit,
+            date: decoded.date
+         }) 
     }
     render() { 
         return ( 
             <div className='dashboard__main'>
+                <ToastContainer/>
                 <section className='dash__box__1'>
                     <h1>MY <span>DASHBOARD</span></h1>
                 </section>
@@ -20,13 +53,13 @@ class DashboardMain extends Component {
                             <li><a href=''><i class="fas fa-receipt"></i> TRANSACTIONS</a></li>
                             <li><a href=''><i class="fas fa-money-check-alt"></i> WITHDRAW</a></li>
                             <li><a href=''><i class="fas fa-users"></i>  REFERRALS</a></li>
-                            <li><a href='' className='btn btn-join-us'> Cashcold &#8615;</a></li>
+                            <li><a href='' className='btn btn-join-us'> {this.state.full_Name} &#8615;</a></li>
                         </ul>
                     </div>
                 </section>
                 <section className='dash__profile'>
                     <div className="profileDash">
-                        <i class="fas fa-user fa-3x"></i><p>WELCOME, CASHCOLD99! LAST ACCESS:FEB-27-2021 07:28:04 AM FROM IP 197.220.169.147</p>
+                    <i class="fas fa-user fa-3x"></i><p>WELCOME, {this.state.user_Name}! LAST ACCESS:FEB-27-2021 07:28:04 AM FROM IP 197.220.169.147</p>
                     </div>
                     <div className="profileDash__file">
                         <a href='' className='btn btn-warning'><i class="fas fa-user-edit"></i> EDIT PROFILE</a>
@@ -37,7 +70,7 @@ class DashboardMain extends Component {
                     <div className="about__dash__info">
                         <div className="dash__info__text">
                             <p>ACCOUNT BALANCE</p>
-                            <p className='p__text'>$0.00</p>
+                            <p className='p__text'>$ {this.state.accountBalance}</p>
                         </div>
                         <div className="dash__info__img">
                         <i class="fas fa-wallet fa-3x"></i>
@@ -46,7 +79,7 @@ class DashboardMain extends Component {
                     <div className="about__dash__info">
                         <div className="dash__info__text">
                             <p>REGISTRATION DATE</p>
-                            <p className='p__text'>SEP-19-2020</p>
+                            <p className='p__text'>{this.state.date}</p>
                         </div>
                         <div className="dash__info__img">
                         <i class="fas fa-calendar-alt fa-3x"></i>
@@ -55,7 +88,7 @@ class DashboardMain extends Component {
                     <div className="about__dash__info">
                         <div className="dash__info__text">
                             <p>IP ADDRESS</p>
-                            <p className='p__text'>197.220.169.147</p>
+                            <p className='p__text'>{this.state.ip_address}</p>
                         </div>
                         <div className="dash__info__img">
                         <i class="fas fa-map-marker-alt fa-3x"></i>
@@ -71,7 +104,7 @@ class DashboardMain extends Component {
                     </div>
                     <div className="balance__info__box">
                         <i class="fas fa-funnel-dollar fa-4x"></i>
-                        <p className='p__text'>$0.00</p>
+                        <p className='p__text'>$ {this.state.activetDeposit}</p>
                         <p>ACTIVE DEPOSIT</p>
                         <a href='' className='btn btn-warning'>DEPOSIT LIST</a>
                     </div>

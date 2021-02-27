@@ -34,7 +34,7 @@ class LoginMain extends Component {
         }
         event.preventDefault()
         axios.post( "http://localhost:3000/users/login",userLogin).then(res => { 
-            localStorage.setItem('x-access-token',JSON.stringify(res.data))
+            sessionStorage.setItem('x-access-token',JSON.stringify(res.data))
             return res.data;
         }).then(res => {toast.success("Login Successful !", setTimeout(()=>{
             toast.success("LOADING ACCOUNT") 
