@@ -45,7 +45,8 @@ class ConfirmDeposit extends Component {
 
        }
        console.log(NewDeposit)
-       axios.post( "http://localhost:8000/users/deposit",NewDeposit).then(res => {toast.success('...Waiting for Blockchain confirmation')}).then(res => setTimeout(()=>{
+    //    http://localhost:8000
+       axios.post( "/users/deposit",NewDeposit).then(res => {toast.success('...Waiting for Blockchain confirmation')}).then(res => setTimeout(()=>{
             window.location='/dashboard'
        },1200))
 
