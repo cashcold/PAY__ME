@@ -73,7 +73,7 @@
 .price{
     font-size: 2rem;
     font-weight: 800;
-    color: #fa5f55;
+    color: #FFB612;
 }
 .box p{
     font-size: 1rem;
@@ -394,6 +394,7 @@
         display: grid;
         grid-template-columns: repeat(1,1fr);
         grid-row-gap: 2em;
+        grid-gap: 5em;
     }
     .feature__text p{
         width: 100%;
@@ -465,6 +466,33 @@
 }
 .welcome__text h1{
     font-size: 1.5rem;
+}
+.title{
+    font-size: 2rem;
+    padding: 0.5em;
+}
+.box h1{
+    font-size: 1.5rem;
+
+}
+.price{
+    font-size: 1rem;
+    width: 50%;
+    margin: auto;
+    font-weight: 800;
+    color: #FFB612;
+}
+.about__investmentt__plan .box{
+    padding-bottom: 2em;
+}
+.reffer__box__1 p{
+    width: 100%;
+    font-size: 1rem;
+    margin:  0 auto;
+    padding: 2em 1em;
+}
+.pay__pay{
+    padding-top: 3em;
 }
 
 }

@@ -11,7 +11,7 @@ class FooterMain extends Component {
                 <section className='footer__class'>
                     <div className="footer">
                         <div className="foot__box1">
-                            <h1><i class="fas fa-ruble-sign fa-2x"></i>ayItForward</h1>
+                             <h1>PayItForward</h1>
                             <p>COPYRIGHT 2021. PAYITFORWARD</p>
                         </div>
                         <div className="foot__box2">

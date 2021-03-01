@@ -13,8 +13,8 @@ class HomeMain extends Component {
             setTimeout(()=>{
                 toast.dark(
                     <div className='wlcome'>
-                        <a href='/register' className='btn btn-join-us'>Register</a>
                         <a href='/login' className='btn btn-login-in'>Login</a>
+                        <a href='/register' className='btn btn-join-us'>Register</a>
                     </div>
                 )
             },8000)
@@ -88,7 +88,7 @@ class HomeMain extends Component {
                        <div className="box box__1">
                            <h1>10%</h1>
                            <h2 className='popular__1'>BEGINNER</h2>
-                           <div className="price">INSTANT DAILY PLAN: DAILY 24HRS</div>
+                           <div className="price">PLAN: DAILY 24HRS</div>
                           <div className="all__plan">
                               <div className="plan__me">
                                     <i class="fas fa-handshake fa-3x"></i>
@@ -100,9 +100,9 @@ class HomeMain extends Component {
                            <a href='' className='btn btn-warning'>DEPOSIT NOW</a>
                        </div>
                        <div className="box box__2">
-                            <h1>25%</h1>
+                            <h1>35%</h1>
                             <h2 className='popular'>STANDARD</h2>
-                                <div className="price">INSTANT HOURLY PLAN: AFTER 3 DAYS</div>
+                                <div className="price"> PLAN: AFTER 3 DAYS</div>
                                 <div className="all__plan">
                               <div className="plan__me">
                                    <i class="fas fa-balance-scale fa-3x"></i>
@@ -114,9 +114,9 @@ class HomeMain extends Component {
                                 <a href='' className='btn btn-warning'>DEPOSIT NOW</a>
                        </div>
                        <div className="box box__3">
-                        <h1>35%</h1>
+                        <h1>55%</h1>
                         <h2 className='popular__3'>POPULAR</h2>
-                            <div className="price">INSTANT DAILY PLAN: AFTER 1 WEEK</div>
+                            <div className="price"> PLAN: AFTER 1 WEEK</div>
                             <div className="all__plan">
                               <div className="plan__me">
                                      <i class="fas fa-user-graduate fa-3x"></i>
@@ -149,7 +149,7 @@ class HomeMain extends Component {
                         <div className="feature__box">
                             <div className="feature__text">
                                 <h3>24/7 CUSTOMER SUPPORT</h3>
-                                <p>We provide 24/7 customer support through e-mail. Our representatives are always ready to help</p>
+                                <p>We provide 24/7 customer support through e-mail and Chat box. Our representatives are always ready to help</p>
                             </div>
                             <div className="feature__img">
                                 <img src={require('../../images/customer-service (1).png')}/>

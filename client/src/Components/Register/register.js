@@ -114,7 +114,7 @@ class RegisterUser extends Component {
                 <div className='registerNow'> 
                     <div className='registerLogo'>
                         {/* <img src={require('../../pic/facebook_cover_photo_1.png')}/> */}
-                        <h1><i class="fas fa-ruble-sign fa-2x"></i>ayItForward <span >WELCOMES</span> YOU</h1> 
+                        <h1>PayItForward <span >WELCOMES</span> YOU</h1> 
                         <ToastContainer/>
                     </div>
                     <div className='formMain'>

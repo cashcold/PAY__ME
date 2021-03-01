@@ -28,6 +28,7 @@
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
     background-image: linear-gradient(to right, #d4e20a 0%, #ff1010 100%);;
+    font-size: 2rem;
 }
 .btn-join-us{
     background-color: #DECDF6; 
@@ -90,6 +91,15 @@
     }
     .nav__links{
         display: none;
+    }
+    .navMain nav{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding-right: 10em;
+        padding-top: 2em;
+        min-height: 8vh;
+        background-color:#2B0945;
+        position: relative;
     }
     
 }

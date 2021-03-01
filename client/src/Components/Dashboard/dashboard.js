@@ -22,7 +22,8 @@ class DashboardMain extends Component {
             activetDeposit: '',
             login: '',
             plan: ''
-         }
+        }
+        this.LogoutNow = this.LogoutNow.bind(this)
     }
     componentDidMount(){
         const token = sessionStorage.getItem('x-access-token')
@@ -36,6 +37,11 @@ class DashboardMain extends Component {
             activetDeposit: decoded.activetDeposit,
             date: decoded.date
          }) 
+    }
+
+    LogoutNow = ()=>{
+        sessionStorage.removeItem('x-access-token');
+        sessionStorage.clear(); 
     }
     render() { 
         return ( 
@@ -59,11 +65,11 @@ class DashboardMain extends Component {
                 </section>
                 <section className='dash__profile'>
                     <div className="profileDash">
-                    <i class="fas fa-user fa-3x"></i><p>WELCOME, {this.state.user_Name}! LAST ACCESS:FEB-27-2021 07:28:04 AM FROM IP 197.220.169.147</p>
+                        <i class="fas fa-user fa-3x"></i><p>WELCOME, {this.state.user_Name}! LAST ACCESS:FROM IP {this.state.ip_address}</p>
                     </div>
                     <div className="profileDash__file">
                         <a href='' className='btn btn-warning'><i class="fas fa-user-edit"></i> EDIT PROFILE</a>
-                        <a href='' className='btn btn-primary'><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
+                        <a href='/' className='btn btn-primary' onClick={this.LogoutNow}><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
                     </div>
                 </section>
                 <section className='about__dash'>
@@ -117,7 +123,7 @@ class DashboardMain extends Component {
                 </section>
                 <section className='reffer_link'>
                     <div className="link__reffer">
-                        <i class="fas fa-link fa-2x"></i><h3>https://payitforward.com/?ref=cashcold99</h3>
+                        <i class="fas fa-link fa-2x"></i><h3>https://payitforward.com/?ref={this.state.user_Name}</h3>
                     </div>
                 </section>
                 <section className='last__dash'>
