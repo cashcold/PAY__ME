@@ -17,7 +17,7 @@
 }
 .links{
     display: grid;
-    grid-template-columns: repeat(8,1fr);
+    grid-template-columns: repeat(9,1fr);
     margin-top: 1.5em;
 }
 .logoImg h1{
@@ -49,6 +49,12 @@
     width: 30px;
     height: 5px;
     margin: 4px 0;
+}
+.togglo__dash{
+    display: none;
+}
+.dash__both{
+    display: flex;
 }
 
 

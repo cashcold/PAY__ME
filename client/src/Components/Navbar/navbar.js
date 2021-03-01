@@ -4,9 +4,16 @@ import './style.css'
 class Navbar extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            isLogin: false,
+         }
     }
     componentDidMount(){
+        if(sessionStorage.getItem('x-access-token') != null)  {
+            this.setState({
+                isLogin: true,
+            })
+        }
       
 
 
@@ -33,7 +40,17 @@ class Navbar extends Component {
         }
         LogoRedirect()
     }
+    LogoutNow = ()=>{
+        sessionStorage.removeItem('x-access-token');
+        sessionStorage.clear(); 
+    }
     render() { 
+        if(this.state.isLogin){
+            document.querySelector(".btn-login-in").style.display = "none"
+            document.querySelector(".btn-join-us").style.display = "none"
+            document.querySelector('.togglo__dash').style.display = 'block'
+            
+        }
         return ( 
             <div className=' navbarMain'>
                <section className='navMain'>
@@ -43,7 +60,7 @@ class Navbar extends Component {
                        </div>
                        <div className='nav__links animate__animated animate__slower animate__bounceInDown'>
                            <ul className='links'>
-                               <li><a href='/'>HOME</a></li>
+                               <li><a href='/'>HOME </a></li>
                                <li><a href='/about-us'>ABOUT US</a></li>
                                <li><a href='/getstart'>GET STARTED</a></li>
                                <li><a href='/affiliate'>AFFILIATE</a></li>
@@ -51,6 +68,12 @@ class Navbar extends Component {
                                <li><a href='/contact-us'>SUPPORT</a></li>
                                 <a href='/login' className='btn btn-login-in'>Login</a> 
                                 <a href='/register' className='btn btn-join-us'>Register</a> 
+                                <div className='togglo__dash'>
+                                    <div className="dash__both">
+                                        <a href='/dashboard' className='btn btn-login-in'>ACCOUNT</a> 
+                                        <a href='/' className='btn btn-join-us' onClick={this.LogoutNow}>LOGOUT</a> 
+                                    </div>
+                                </div>
                            </ul>
                        </div>
                        <div className='aboyt__toggle '>
