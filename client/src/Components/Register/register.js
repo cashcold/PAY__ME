@@ -100,9 +100,9 @@ class RegisterUser extends Component {
             return false
         }
 
-        
+        // http://localhost:3000
         event.preventDefault()
-        axios.post("http://localhost:3000/users/register/",SaveNewUser).then(res => {toast.success("Register Successful")}).then(res => setTimeout(()=>{
+        axios.post("/users/register/",SaveNewUser).then(res => {toast.success("Register Successful")}).then(res => setTimeout(()=>{
             window.location="/login"
         }),8000).catch(err => {toast.error(err.response.data)})
         

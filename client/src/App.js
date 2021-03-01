@@ -13,6 +13,10 @@ import RegisterUser from './Components/Register/register';
 import LoginMain from './Components/Login/login';
 import FQA from './Components/FQA/fqa';
 import DashboardMain from './Components/Dashboard/dashboard';
+import Settings from './Components/Settings/settings';
+import CalCulateProfit from './Components/Calculate/calculate';
+import Deposit from './Components/Deposit/deposit';
+import ConfirmDeposit from './Components/ConfrimDeposit/confirmDeposit';
 
 class MainApp extends Component {
     constructor(props) {
@@ -38,6 +42,10 @@ class MainApp extends Component {
                               <Route path='/login' exact component={LoginMain}/> 
                               <Route path='/FQA' exact component={FQA}/> 
                               <Route path='/dashboard' exact component={DashboardMain}/> 
+                              <Route path='/settings' exact component={Settings}/> 
+                              <Route path='/calculate' exact component={CalCulateProfit}/> 
+                              <Route path='/deposit' exact component={Deposit}/> 
+                              <Route path='/confirmDeposit' exact component={ConfirmDeposit}/> 
                               
                            </Switch>
                         </div>

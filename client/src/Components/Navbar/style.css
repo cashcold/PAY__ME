@@ -19,6 +19,7 @@
     display: grid;
     grid-template-columns: repeat(9,1fr);
     margin-top: 1.5em;
+    grid-gap: 10px;
 }
 .logoImg h1{
     color: white;

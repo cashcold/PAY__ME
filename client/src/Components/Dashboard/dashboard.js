@@ -53,8 +53,8 @@ class DashboardMain extends Component {
                 <section className='dash__links'>
                     <div className="linkDash">
                         <ul>
-                            <li><a href=''><i class="fas fa-user"></i> DASHBOARD</a></li>
-                            <li><a href=''><i class="fas fa-dollar-sign"></i> DEPOSIT</a></li>
+                            <li><a href='/dashboard'><i class="fas fa-user"></i> DASHBOARD</a></li>
+                            <li><a href='/deposit'><i class="fas fa-dollar-sign"></i> DEPOSIT</a></li>
                             <li><a href=''><i class="fas fa-hand-holding-usd"></i> YOUR DEPOSITS</a></li>
                             <li><a href=''><i class="fas fa-receipt"></i> TRANSACTIONS</a></li>
                             <li><a href=''><i class="fas fa-money-check-alt"></i> WITHDRAW</a></li>
@@ -68,7 +68,7 @@ class DashboardMain extends Component {
                         <i class="fas fa-user fa-3x"></i><p>WELCOME, {this.state.user_Name}! LAST ACCESS:FROM IP {this.state.ip_address}</p>
                     </div>
                     <div className="profileDash__file">
-                        <a href='' className='btn btn-warning'><i class="fas fa-user-edit"></i> EDIT PROFILE</a>
+                        <a href='/settings' className='btn btn-warning'><i class="fas fa-user-edit"></i> EDIT PROFILE</a>
                         <a href='/' className='btn btn-primary' onClick={this.LogoutNow}><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
                     </div>
                 </section>

@@ -1,0 +1,30 @@
+
+.calculateProfit{
+    min-height: 30vh;
+    background-color: #481961;
+    width: 100%;
+    padding: 8em 0;
+}
+.btn-check-me{
+    margin-left: 1em;
+}
+
+.calInterest input{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+@media screen and ( max-width: 414px){
+    .calculateProfit h1{
+        font-size: 20px;
+    }
+
+    .profit{
+        font-size: 1em;
+    }
+    .toatlProfit{
+        font-size: 1.3em;
+    }
+}
