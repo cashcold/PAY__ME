@@ -17,6 +17,9 @@ import Settings from './Components/Settings/settings';
 import CalCulateProfit from './Components/Calculate/calculate';
 import Deposit from './Components/Deposit/deposit';
 import ConfirmDeposit from './Components/ConfrimDeposit/confirmDeposit';
+import ForgotPassword from './Components/Password/forgotPassword';
+import ActivitPassword from './Components/Password/activePassword';
+import WithdrawNow from './Components/Withdraw/withdraw';
 
 class MainApp extends Component {
     constructor(props) {
@@ -29,9 +32,11 @@ class MainApp extends Component {
         return ( 
             <Router>
                 <div className='mainApp animate__animated animate__zoomIn animate__slowerss'>
+                <div  className='google__id' id="google_translate_element"></div>
                     <div className='container_!'>
                         <Navbar/>
                         <div className='router'>
+                            
                            <Switch>
                               <Route path='/' exact component={HomeMain}/> 
                               <Route path='/about-us' exact component={AboutUsMain}/> 
@@ -46,7 +51,9 @@ class MainApp extends Component {
                               <Route path='/calculate' exact component={CalCulateProfit}/> 
                               <Route path='/deposit' exact component={Deposit}/> 
                               <Route path='/confirmDeposit' exact component={ConfirmDeposit}/> 
-                              
+                              <Route path='/forgotpassword' exact component={ForgotPassword}/> 
+                              <Route path='/activitPassword/:token' exact component={ActivitPassword}/> 
+                              <Route path='/withdraw/:id' exact component={WithdrawNow}/> 
                            </Switch>
                         </div>
                         <FooterMain/>

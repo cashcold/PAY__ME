@@ -108,7 +108,13 @@
         background-color:#2B0945;
         position: relative;
     }
-    
+    .dash__both{
+    display: flex;
+    flex-direction: column;
+    }
+    .btn-login-in_account{
+        margin-bottom: 1em;
+    }
 }
 @media screen and (max-width: 500px){
 

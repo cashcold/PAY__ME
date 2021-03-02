@@ -28,6 +28,7 @@ class DashboardMain extends Component {
     componentDidMount(){
         const token = sessionStorage.getItem('x-access-token')
         const decoded = jwt_decode(token)
+        const activetDeposit = JSON.stringify( sessionStorage.setItem('activetDeposit',decoded.activetDeposit))
         this.setState({
             id: decoded.user_id,
             full_Name: decoded.full_Name,
@@ -37,9 +38,25 @@ class DashboardMain extends Component {
             activetDeposit: decoded.activetDeposit,
             date: decoded.date
          }) 
-    }
+         
+         const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
+        
+         const ActivetDeposit__24HR = ()=>{
+           var d = new Date();
+            d.setDate(d.getDate() + 3);
+          if(activetDeposit__amount > 99){
+              if(d){
+                document.querySelector('.activetStatus').innerHTML = "0.00$"
+                document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+              }
+            }
+          
+            }
+            ActivetDeposit__24HR() 
+        
+        }
 
-    LogoutNow = ()=>{
+        LogoutNow = ()=>{
         sessionStorage.removeItem('x-access-token');
         sessionStorage.clear(); 
     }
@@ -76,7 +93,8 @@ class DashboardMain extends Component {
                     <div className="about__dash__info">
                         <div className="dash__info__text">
                             <p>ACCOUNT BALANCE</p>
-                            <p className='p__text'>$ {this.state.accountBalance}</p>
+                            <p className='p__text balanceMe'><span className='sign__color'>$</span> {this.state.accountBalance}</p>
+                            <a href={`/withdraw/${this.state.id}`} className='btn btn-warning'>REQUEST PAYMENT</a>
                         </div>
                         <div className="dash__info__img">
                         <i class="fas fa-wallet fa-3x"></i>
@@ -104,21 +122,21 @@ class DashboardMain extends Component {
                 <section className='blance__info'>
                     <div className="balance__info__box">
                         <i class="fas fa-file-invoice-dollar fa-4x"></i>
-                        <p className='p__text'>$0.00</p>
+                        <p className='p__text'><span className='sign__color'>$</span>0.00</p>
                         <p>EARNED TOTAL</p>
                         <a href='' className='btn btn-warning'>MAKE A DEPOSIT</a>
                     </div>
                     <div className="balance__info__box">
                         <i class="fas fa-funnel-dollar fa-4x"></i>
-                        <p className='p__text'>$ {this.state.activetDeposit}</p>
+                        <p className='p__text activetStatus'><span className='sign__color'>$</span> {this.state.activetDeposit}</p>
                         <p>ACTIVE DEPOSIT</p>
                         <a href='' className='btn btn-warning'>DEPOSIT LIST</a>
                     </div>
                     <div className="balance__info__box">
                         <i class="fas fa-money-check-alt fa-4x"></i>
-                        <p className='p__text'>$0.00</p>
+                        <p className='p__text'><span className='sign__color'>$</span>0.00</p>
                         <p>WITHDREW TOTAL</p>
-                        <a href='' className='btn btn-warning'>REQUEST PAYMENT</a>
+                        
                     </div>
                 </section>
                 <section className='reffer_link'>

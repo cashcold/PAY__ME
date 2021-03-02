@@ -187,11 +187,14 @@ Router.post('/deposit', async(req,res)=>{
 
     const UserDepositNow = new UserDeposit({
         user_Name: req.body.user_Name,
-        plan: req.body.plan,
+        full_Name: req.body.full_Name,
+        planNow: req.body.planNow,
         depositAmount: req.body.depositAmount,
-        bitcoin: req.body.bitcoin,
-        bitcoinCash: req.body.bitcoinCash,
-        ethereum: req.body.ethereum
+        walletAddress: req.body.walletAddress,
+        date: req.body.date
+        // bitcoin: req.body.bitcoin,
+        // bitcoinCash: req.body.bitcoinCash,
+        // ethereum: req.body.ethereum 
 
     })
 

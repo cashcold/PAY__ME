@@ -15,7 +15,13 @@ class Deposit extends Component {
             depositAmount: '',
             walletAddress: '',
             user_Name: '',
-            full_name: ''
+            full_Name: '',
+            activetDeposit: '',
+            date: ''
+            // bitcoinCash: '',
+            // ethereum: '',
+            // bitcoin: '',
+
          }
         this.handleChange = this.handleChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
@@ -26,12 +32,18 @@ class Deposit extends Component {
         this.setState({[input]: event.target.value})
     }
     componentDidMount(){
+        const DateTime = new Date().toString()
+        this.setState({
+            date: DateTime
+        })
 
         const token = sessionStorage.getItem('x-access-token')
         const decoded = jwt_decode(token)
         this.setState({
             id: decoded.user_id,
+            user_Name: decoded.user_Name,
             full_Name: decoded.full_Name,
+            activetDeposit: decoded.activetDeposit
          })
 
         document.querySelector('.planBtn1').addEventListener('click',()=>{
@@ -51,9 +63,15 @@ class Deposit extends Component {
     onSubmit = (event)=>{
         event.preventDefault()
         const DepositForm = {
+            user_Name: this.state.user_Name,
+            full_Name: this.state.full_Name,
             planNow: this.state.planNow,
             depositAmount: this.state.depositAmount,
-            walletAddress: this.state.walletAddress
+            walletAddress: this.state.walletAddress,
+            date: this.state.date
+            // bitcoin: this.state.bitcoin,
+            // bitcoinCash: this.state.bitcoinCash,
+            // ethereum: this.state.ethereum
 
         }
         if(!DepositForm.planNow){
@@ -69,12 +87,16 @@ class Deposit extends Component {
             return false
         }
 
-        
+        console.log(DepositForm)
 
-        localStorage.setItem('PlanSelect', this.state.planNow)
-        localStorage.setItem('DepositAmount', this.state.depositAmount)
-        localStorage.setItem('WalletAddress', this.state.walletAddress)
-        
+        sessionStorage.setItem('user__name', this.state.user_Name)
+        sessionStorage.setItem('full_Name', this.state.full_Name)
+        sessionStorage.setItem('planNow', this.state.planNow)
+         sessionStorage.setItem('depositAmount', this.state.depositAmount)
+        sessionStorage.setItem('walletAddress', this.state.walletAddress)
+        sessionStorage.setItem('date', this.state.date)
+       
+        // axios.post( "http://localhost:3000/users/deposit",DepositForm).then(res => toast.warning('Confirm Payment'))
         toast.warning('Confirm Payment')
         setTimeout(()=>{
             window.location='/confirmDeposit'

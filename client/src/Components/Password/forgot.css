@@ -1,0 +1,45 @@
+.passwordForgot{
+    min-height: 60vh;
+    background-color: #481961;
+}
+.mainPassword{
+    padding-top: 8em;
+}
+.recoverInput input{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin: 2em 0;
+}
+.mainPassword h1{
+    
+    background-color: blue;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #0ae276 0%, #ff1010 100%);;
+}
+
+@media screen and (max-width: 768){
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .mainPassword h1{
+    
+        background-color: blue;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        background-image: linear-gradient(to right, #0ae276 0%, #ff1010 100%);;
+    }
+}

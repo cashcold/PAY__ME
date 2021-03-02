@@ -13,6 +13,10 @@
 .dash__box__1 span{
     color: #FBA317;
 }
+.sign__color{
+    color: #FBA317;
+    margin-right: 0.3em;
+}
 .linkDash ul{
     display: grid;
     grid-template-columns: repeat(7,1fr);
@@ -56,6 +60,7 @@
     min-height: 10vh;
     background-color: #481961;
     padding-top: 2em;
+    padding-bottom: 3em;
 
 }
 .blance__info{

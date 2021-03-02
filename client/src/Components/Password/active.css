@@ -1,0 +1,20 @@
+.activepassword{
+    
+    min-height: 60vh;
+    background-color: #481961;
+    padding-top: 4em;
+}
+
+.activepassword h1{
+    
+    background-color: blue;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #0ae276 0%, #ff1010 100%);;
+}
+@media screen and (max-width: 768px){
+   
+   
+}

@@ -70,7 +70,7 @@ class Navbar extends Component {
                                 <a href='/register' className='btn btn-join-us'>Register</a> 
                                 <div className='togglo__dash'>
                                     <div className="dash__both">
-                                        <a href='/dashboard' className='btn btn-login-in'>ACCOUNT</a> 
+                                        <a href='/dashboard' className='btn btn-login-in btn-login-in_account'>ACCOUNT</a> 
                                         <a href='/' className='btn btn-join-us' onClick={this.LogoutNow}>LOGOUT</a> 
                                     </div>
                                 </div>

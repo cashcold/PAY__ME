@@ -9,50 +9,60 @@ class ConfirmDeposit extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            plan: '',
+            planNow: '',
             depositAmount: '',
+            walletAddress: '',
             user_Name: '',
-            bitcoin: '',
-            bitcoinCash: '',
-            ethereum: ''
+            full_Name: '',
+            date: ''
         }
         this.onSubmit = this.onSubmit.bind(this)
        
     }
 
     componentDidMount(){
-         
+        
+        
+        const user_Name =  sessionStorage.getItem('user__name')
+        const full_Name = sessionStorage.getItem('full_Name')
+        const planNow  = sessionStorage.getItem('planNow')
+        const depositAmount = sessionStorage.getItem('depositAmount')
+        const walletAddress = sessionStorage.getItem('walletAddress')
+        const date = sessionStorage.getItem('date')
+
+        this.setState({
+            user_Name,
+            full_Name,
+            planNow,
+            depositAmount,
+            walletAddress,
+            date
 
 
-
-
-
+        })
         
     }
 
     
    onSubmit = ()=>{
-    
-
-
-       const NewDeposit = {
-           plan: this.state.plan,
-           depositAmount: this.state.depositAmount,
-           user_Name: this.state.user_Name,
-           bitcoin: this.state.bitcoin,
-           bitcoinCash: this.state.bitcoinCash,
-           ethereum: this.state.ethereum
+        const NewDeposit = {
+        user_Name: this.state.user_Name,
+        full_Name: this.state.full_Name,
+        planNow: this.state.planNow,
+        depositAmount: this.state.depositAmount,
+        walletAddress: this.state.walletAddress,
+        date: this.state.date
 
        }
        console.log(NewDeposit)
     //    http://localhost:8000
-       axios.post( "/users/deposit",NewDeposit).then(res => {toast.success('...Waiting for Blockchain confirmation')}).then(res => setTimeout(()=>{
+       axios.post( "http://localhost:8000/users/deposit",NewDeposit).then(res => {toast.success('...Waiting for Blockchain confirmation')}).then(res => setTimeout(()=>{
             window.location='/dashboard'
        },1200))
 
    }
     render() { 
-       
+       console.log(this.state)
         return(
             <div className='confirm'>
                 <div className='confirmDepositNow'>
