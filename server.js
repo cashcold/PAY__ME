@@ -5,6 +5,8 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const userRouter = require('./Router/userRouter')
 const path = require('path')
+const cron = require("node-cron")
+const shell = require("shelljs")
 
 dotEnv.config()
 
@@ -15,6 +17,11 @@ mongoose.connect(process.env.MONGODB_URI,{ useNewUrlParser: true },()=>{
 const PORT = process.env.PORT || 8000
 
 const JungleServer = express()
+
+// cron.schedule("* * * * * *",()=>{
+//     console.log('TIME WORKING')
+// })
+
 
 JungleServer.use(cors())
 JungleServer.use(bodyParser.json())

@@ -38,7 +38,7 @@ class ActivitPassword extends Component {
         const token  = this.props.match.params.token
         
         event.preventDefault()
-        axios.post(`http://localhost:8000/users/activtypassword/${token}`, saveLinkPassword).then(res => {toast.success("Password Update") }).then(
+        axios.post(`/users/activtypassword/${token}`, saveLinkPassword).then(res => {toast.success("Password Update") }).then(
             setTimeout(()=>{
                 window.location='/login'
             },8000)

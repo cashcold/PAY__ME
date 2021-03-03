@@ -13,15 +13,16 @@ class WithdrawNow extends Component {
         this.state = {
             user_Name: '',
             email: '',
+            accountBalance: '',
+            zero_accountBalance: '0',
+            activetDeposit: '',
             bitcoin: '',
             bitcoinCash: '',
             ethereum: '',
-            accountBalance: '',
-            zero_accountBalance: '0',
-            beforeAccountBalance: '',
+            date: ''
               
          }
-         this.ConfirmWithdraw = this.ConfirmWithdraw.bind(this)
+        //  this.ConfirmWithdraw = this.ConfirmWithdraw.bind(this)
          this.onSubmit = this.onSubmit.bind(this)
          this.handleChange = this.handleChange.bind(this)
 
@@ -37,23 +38,25 @@ class WithdrawNow extends Component {
     WithdrawNowFound = ()=>{
         this.setState({accountBalance: '0'})
         setTimeout(()=>
-        {toast.success(`Payment of $${this.state.beforeAccountBalance} Have sent to you ${this.state.bitcoin}`)},800)
+        {toast.success(`Payment of $${this.state.activetDeposit} Have sent to you ${this.state.bitcoin}`)},800)
 
-        // localStorage.removeItem('token')
+        // sessionStorage.removeItem('token')
         
 
         const Withdraw = { 
             accountBalance: this.state.accountBalance,
             zero_accountBalance: this.state.zero_accountBalance,
             user_Name: this.state.user_Name,
+            email: this.state.email,
+            date: this.state.date,
             bitcoin: this.state.bitcoin,
             bitcoinCash: this.state.bitcoinCash,
-            email: this.state.email,
             ethereum: this.state.ethereum,
         }
         const id  = this.props.match.params.id
+        console.log(Withdraw)
         axios.post(`http://localhost:8000/users/withdraw/${id}`,Withdraw).then(res => { 
-            localStorage.setItem('RefreshToken',JSON.stringify(res.data))
+            sessionStorage.setItem('RefreshToken',JSON.stringify(res.data))
             return res.data;
         }).then(res => {toast.success("Account Update") }).then(setTimeout(()=>{
             window.location='/dashboard'
@@ -63,14 +66,35 @@ class WithdrawNow extends Component {
         
     }
 
-    ConfirmWithdraw = ()=>{
-        toast.success('Payment sent to your Bitcoin Address')
-        // setTimeout(()=>{
-        //     window.location='/dashboard'
-        // },5000)
-    }
+    //  ConfirmWithdraw = ()=>{
+    //     toast.success('Payment sent to your Bitcoin Address')
+    //     setTimeout(()=>{
+    //         window.location='/dashboard'
+    //     },800)
+    //     }
     componentDidMount(){
+        const DateTime = new Date().toString()
+        this.setState({
+            date: DateTime
+        })
         
+        const user_Name =  sessionStorage.getItem('user_Name')
+        const email = sessionStorage.getItem('email')
+        const activetDeposit = sessionStorage.getItem('activetDeposit')
+        const bitcoin = sessionStorage.getItem('bitcoin')
+        const bitcoinCash = sessionStorage.getItem('bitcoinCash')
+        const ethereum = sessionStorage.getItem('ethereum')
+        
+        const accountBalance = JSON.parse(sessionStorage.getItem('activetDeposit'))
+        this.setState({
+            accountBalance,
+            user_Name,
+            email,
+            bitcoin,
+            bitcoinCash,
+            ethereum,
+            activetDeposit
+        })
         // if(balance < 1){
         //     document.querySelector('.checkBalance').innerHTML ="You have no funds to withdraw."
         //     document.querySelector('.confrimWithdraw').style.display = "none"
@@ -91,7 +115,7 @@ class WithdrawNow extends Component {
     }
    
     render() { 
-        console.log(this.state.accountBalance)
+        console.log(this.state)
         return ( 
             <div className='mainWidthDraw'>
                 <div className='withdraw'>

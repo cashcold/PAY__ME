@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-
+ 
 const userSchema = new mongoose.Schema({
-    user_Name: {
+    user_Name: { 
         type: String,
     },
     accountBalance: {
@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
         require: true,
     },
     bitcoin: {
-        type: String,  
+        type: String,
     },
     bitcoinCash: {
         type: String,
@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
     zero_accountBalance: {
         type: String,
     },
+    date:{
+        type: String,
+        require: true,
+    }
 
 
     

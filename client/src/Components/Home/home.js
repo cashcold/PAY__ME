@@ -9,6 +9,11 @@ class HomeMain extends Component {
     }
 
     componentDidMount(){
+
+        const reffer = window.location.search;
+        localStorage.setItem('reffer', reffer) 
+
+
         const welcome__msg = ()=>{
             setTimeout(()=>{
                 toast.dark(
@@ -36,7 +41,11 @@ class HomeMain extends Component {
                     <div className="flow__text">
                     <marquee className='marqueeText'>
                            <div className='litcoin'>
-                               
+                               <img src={require('../../images/paymenticon1-min.png')}/>
+                               <img src={require('../../images/paymenticon2-min.png')}/>
+                               <img src={require('../../images/paymenticon3-min.png')}/>
+                               <img src={require('../../images/paymenticon4-min.png')}/>
+                               <img src={require('../../images/paymenticon5-min.png')}/>
                            </div>
                        </marquee>
                     </div>

@@ -14,7 +14,7 @@ class LoginMain extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
     }
-
+   
     handleChange = input => (event)=>{
         event.preventDefault()
         this.setState({[input]: event.target.value})

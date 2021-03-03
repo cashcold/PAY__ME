@@ -26,9 +26,22 @@ class DashboardMain extends Component {
         this.LogoutNow = this.LogoutNow.bind(this)
     }
     componentDidMount(){
+
+        const RefreshToken = sessionStorage.getItem('RefreshToken')
+        if(RefreshToken){
+            sessionStorage.removeItem('x-access-token')
+            sessionStorage.setItem('x-access-token',RefreshToken)
+        }
+
+
         const token = sessionStorage.getItem('x-access-token')
         const decoded = jwt_decode(token)
-        const activetDeposit = JSON.stringify( sessionStorage.setItem('activetDeposit',decoded.activetDeposit))
+         JSON.stringify( sessionStorage.setItem('email',decoded.email))
+         JSON.stringify( sessionStorage.setItem('user_Name',decoded.user_Name))
+         JSON.stringify( sessionStorage.setItem('activetDeposit',decoded.activetDeposit))
+         JSON.stringify( sessionStorage.setItem('bitcoin',decoded.bitcoin))
+         JSON.stringify( sessionStorage.setItem('bitcoinCash',decoded.bitcoinCash))
+         JSON.stringify( sessionStorage.setItem('ethereum',decoded.ethereum))
         this.setState({
             id: decoded.user_id,
             full_Name: decoded.full_Name,
@@ -42,17 +55,27 @@ class DashboardMain extends Component {
          const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
         
          const ActivetDeposit__24HR = ()=>{
-           var d = new Date();
-            d.setDate(d.getDate() + 3);
-          if(activetDeposit__amount > 99){
-              if(d){
-                document.querySelector('.activetStatus').innerHTML = "0.00$"
-                document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-              }
-            }
-          
+                if(activetDeposit__amount > 99){
+                    setTimeout(()=>{
+                        document.querySelector('.activetStatus').innerHTML = "0.00$"
+                        document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+                    },8000)
+                }
             }
             ActivetDeposit__24HR() 
+        //  const ActivetDeposit__24HR = ()=>{
+        //    var d = new Date();
+        //     d.setDate(d.getDate() + 3);
+        //     console.log(d)
+        //   if(activetDeposit__amount > 99){
+        //       if(d){
+        //         document.querySelector('.activetStatus').innerHTML = "0.00$"
+        //         document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+        //       }
+        //     }
+          
+        //     }
+        //     ActivetDeposit__24HR() 
         
         }
 
@@ -136,7 +159,7 @@ class DashboardMain extends Component {
                         <i class="fas fa-money-check-alt fa-4x"></i>
                         <p className='p__text'><span className='sign__color'>$</span>0.00</p>
                         <p>WITHDREW TOTAL</p>
-                        
+                        <a href='' className='btn btn-warning'>WITHDREW TOTAL</a>
                     </div>
                 </section>
                 <section className='reffer_link'>
