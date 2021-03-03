@@ -95,15 +95,11 @@ class WithdrawNow extends Component {
             ethereum,
             activetDeposit
         })
-        // if(balance < 1){
-        //     document.querySelector('.checkBalance').innerHTML ="You have no funds to withdraw."
-        //     document.querySelector('.confrimWithdraw').style.display = "none"
-        // }
+        if(accountBalance < 1){
+            document.querySelector('.checkBalance').innerHTML ="You have no funds to withdraw."
+            document.querySelector('.confrimWithdraw').style.display = "none"
+        }
       
-        // if(balance < 1){
-        //     document.querySelector('.checkBalance').innerHTML ="You have no funds to withdraw."
-        //     document.querySelector('.confrimWithdraw').style.display = "none"
-        // }
       
        
     }
