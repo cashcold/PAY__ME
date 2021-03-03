@@ -51,18 +51,35 @@ class DashboardMain extends Component {
             activetDeposit: decoded.activetDeposit,
             date: decoded.date
          }) 
+
+
+
+
+
+
+
          
          const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
+         if(activetDeposit__amount){
+             
+            if(activetDeposit__amount > 99){
+                setTimeout(()=>{
+                document.querySelector('.activetStatus').innerHTML = "0.00$"
+                document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+              },8000)
+             }
+         }
+        //  const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
         
-         const ActivetDeposit__24HR = ()=>{
-                if(activetDeposit__amount > 99){
-                    setTimeout(()=>{
-                        document.querySelector('.activetStatus').innerHTML = "0.00$"
-                        document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-                    },8000)
-                }
-            }
-            ActivetDeposit__24HR() 
+        //  const ActivetDeposit__24HR = ()=>{
+        //         if(activetDeposit__amount > 99){
+        //             setTimeout(()=>{
+        //                 document.querySelector('.activetStatus').innerHTML = "0.00$"
+        //                 document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+        //             },8000)
+        //         }
+        //     }
+        //     ActivetDeposit__24HR() 
         //  const ActivetDeposit__24HR = ()=>{
         //    var d = new Date();
         //     d.setDate(d.getDate() + 3);

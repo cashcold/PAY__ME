@@ -11,7 +11,7 @@ class HomeMain extends Component {
     componentDidMount(){
 
         const reffer = window.location.search;
-        localStorage.setItem('reffer', reffer) 
+        sessionStorage.setItem('reffer', reffer) 
 
 
         const welcome__msg = ()=>{
