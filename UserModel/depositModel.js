@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
+    user_id: {
+        type: String,
+        require: true,
+    },
     full_Name: {
         type: String,
         require: true,
@@ -14,7 +18,13 @@ const userSchema = new mongoose.Schema({
         require: true,
     },
     depositAmount: {
-        type: String,
+        
+        type: Number,
+        require: true,
+    },
+    depositAmountlast: {
+        
+        type: Number,
         require: true,
     },
   
@@ -22,21 +32,16 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-  
+    email: {
+        type: String,
+        require: true,
+    },
+    
     date:{
         type: String,
         require: true,
     }
-      // bitcoin: {
-    //     type: String,
-    // },
-    // bitcoinCash: {
-    //     type: String,
-    // },
-    // ethereum: {
-    //     type: String,
-    // }
-    // ,
+    
     
 })
 

@@ -9,11 +9,13 @@ class ConfirmDeposit extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            user_id: '',
             planNow: '',
             depositAmount: '',
             walletAddress: '',
             user_Name: '',
             full_Name: '',
+            email: '',
             date: ''
         }
         this.onSubmit = this.onSubmit.bind(this)
@@ -23,19 +25,23 @@ class ConfirmDeposit extends Component {
     componentDidMount(){
         
         
+        const user_id =  sessionStorage.getItem('user_id')
         const user_Name =  sessionStorage.getItem('user__name')
         const full_Name = sessionStorage.getItem('full_Name')
         const planNow  = sessionStorage.getItem('planNow')
+        const email  = sessionStorage.getItem('email')
         const depositAmount = sessionStorage.getItem('depositAmount')
         const walletAddress = sessionStorage.getItem('walletAddress')
         const date = sessionStorage.getItem('date')
 
         this.setState({
+            user_id,
             user_Name,
             full_Name,
             planNow,
             depositAmount,
             walletAddress,
+            email,
             date
 
 
@@ -46,6 +52,8 @@ class ConfirmDeposit extends Component {
     
    onSubmit = ()=>{
         const NewDeposit = {
+        user_id: this.state.user_id,
+        email: this.state.email,
         user_Name: this.state.user_Name,
         full_Name: this.state.full_Name,
         planNow: this.state.planNow,

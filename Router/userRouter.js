@@ -1,13 +1,13 @@
 const express = require('express')
 const User = require('../UserModel/userModel')
+const UserDeposit = require('../UserModel/depositModel')
+const WithdrawDeposit = require('../UserModel/widthdraw')
 const bcrypt = require('bcryptjs')
 const mailgun = require('mailgun-js')
 const dotEnv = require('dotenv')
 const jwt = require('jsonwebtoken')
 const async = require('async')
 const crypto = require('crypto')
-const UserDeposit = require('../UserModel/depositModel')
-const WithdrawDeposit = require('../UserModel/widthdraw')
 
 dotEnv.config()
 
@@ -63,6 +63,7 @@ Router.post('/register/', async(req,res)=>{
 Router.post('/login', async(req,res)=>{
     const user = await User.findOne({email: req.body.email})
     if(!user) {
+
         return res.status(400).send('Email Do Not Exist')
     } 
 
@@ -181,20 +182,30 @@ Router.post('/forgotpassword', async (req,res,next)=>{
    })
 })
 
+Router.get('/depositInfo',async(req,res)=>{
+    
+   
+    const currentDeposit = await UserDeposit.aggregate([
+        {$match: {}},
+        {$group: {_id: "$user_id", depositAmount: { $sum: "$depositAmount" },depositAmountlast: { $last: "$depositAmount" }}  }
 
+    ])
+   
+    res.send(currentDeposit)
+})
 
 Router.post('/deposit', async(req,res)=>{
-
+    
+    
     const UserDepositNow = new UserDeposit({
+        user_id: req.body.user_id,
         user_Name: req.body.user_Name,
         full_Name: req.body.full_Name,
         planNow: req.body.planNow,
-        depositAmount: req.body.depositAmount,
+        depositAmount: Number(req.body.depositAmount),
         walletAddress: req.body.walletAddress,
+        email: req.body.email,
         date: req.body.date
-        // bitcoin: req.body.bitcoin,
-        // bitcoinCash: req.body.bitcoinCash,
-        // ethereum: req.body.ethereum 
 
     })
 

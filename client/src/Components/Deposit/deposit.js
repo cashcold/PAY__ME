@@ -11,6 +11,7 @@ class Deposit extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            user_id: '',
             planNow: '',
             depositAmount: '',
             walletAddress: '',
@@ -32,6 +33,7 @@ class Deposit extends Component {
         this.setState({[input]: event.target.value})
     }
     componentDidMount(){
+        
         const DateTime = new Date().toString()
         this.setState({
             date: DateTime
@@ -40,7 +42,7 @@ class Deposit extends Component {
         const token = sessionStorage.getItem('x-access-token')
         const decoded = jwt_decode(token)
         this.setState({
-            id: decoded.user_id,
+            user_id: decoded.user_id,
             user_Name: decoded.user_Name,
             full_Name: decoded.full_Name,
             activetDeposit: decoded.activetDeposit
@@ -63,6 +65,7 @@ class Deposit extends Component {
     onSubmit = (event)=>{
         event.preventDefault()
         const DepositForm = {
+            user_id: this.state.user_id,
             user_Name: this.state.user_Name,
             full_Name: this.state.full_Name,
             planNow: this.state.planNow,
@@ -96,7 +99,7 @@ class Deposit extends Component {
         sessionStorage.setItem('walletAddress', this.state.walletAddress)
         sessionStorage.setItem('date', this.state.date)
        
-        // axios.post( "http://localhost:3000/users/deposit",DepositForm).then(res => toast.warning('Confirm Payment'))
+        
         toast.warning('Confirm Payment')
         setTimeout(()=>{
             window.location='/confirmDeposit'

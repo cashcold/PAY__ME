@@ -16,16 +16,21 @@ class DashboardMain extends Component {
             bitcoin: '',
             bitcoinCash: '',
             id: '',
+            email: '',
             ethereum: '',
             date: '',
             accountBalance: '',
             activetDeposit: '',
+            totalDeposit: [],
+            totalDeposit_id: '',
             login: '',
             plan: ''
         }
         this.LogoutNow = this.LogoutNow.bind(this)
     }
     componentDidMount(){
+       
+       
 
         const RefreshToken = sessionStorage.getItem('RefreshToken')
         if(RefreshToken){
@@ -33,9 +38,11 @@ class DashboardMain extends Component {
             sessionStorage.setItem('x-access-token',RefreshToken)
         }
 
-
+        
         const token = sessionStorage.getItem('x-access-token')
         const decoded = jwt_decode(token)
+         JSON.stringify( sessionStorage.setItem('user_id',decoded.user_id))
+        //  JSON.stringify( sessionStorage.setItem('deposit_id',decoded.deposit_id))
          JSON.stringify( sessionStorage.setItem('email',decoded.email))
          JSON.stringify( sessionStorage.setItem('user_Name',decoded.user_Name))
          JSON.stringify( sessionStorage.setItem('activetDeposit',decoded.activetDeposit))
@@ -47,13 +54,16 @@ class DashboardMain extends Component {
             full_Name: decoded.full_Name,
             user_Name: decoded.user_Name,
             ip_address: decoded.ip_address,
+            email: decoded.email,
             accountBalance: decoded.accountBalance,
             activetDeposit: decoded.activetDeposit,
             date: decoded.date
          }) 
 
 
-
+         fetch('http://localhost:8000/users/depositInfo').then(res => res.json()).then(data => this.setState({
+            totalDeposit: data
+        }))
 
 
 
@@ -69,30 +79,6 @@ class DashboardMain extends Component {
               },8000)
              }
          }
-        //  const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
-        
-        //  const ActivetDeposit__24HR = ()=>{
-        //         if(activetDeposit__amount > 99){
-        //             setTimeout(()=>{
-        //                 document.querySelector('.activetStatus').innerHTML = "0.00$"
-        //                 document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-        //             },8000)
-        //         }
-        //     }
-        //     ActivetDeposit__24HR() 
-        //  const ActivetDeposit__24HR = ()=>{
-        //    var d = new Date();
-        //     d.setDate(d.getDate() + 3);
-        //     console.log(d)
-        //   if(activetDeposit__amount > 99){
-        //       if(d){
-        //         document.querySelector('.activetStatus').innerHTML = "0.00$"
-        //         document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-        //       }
-        //     }
-          
-        //     }
-        //     ActivetDeposit__24HR() 
         
         }
 
@@ -101,6 +87,7 @@ class DashboardMain extends Component {
         sessionStorage.clear(); 
     }
     render() { 
+        console.log(this.state.totalDeposit)
         return ( 
             <div className='dashboard__main'>
                 <ToastContainer/>
@@ -164,7 +151,7 @@ class DashboardMain extends Component {
                         <i class="fas fa-file-invoice-dollar fa-4x"></i>
                         <p className='p__text'><span className='sign__color'>$</span>0.00</p>
                         <p>EARNED TOTAL</p>
-                        <a href='' className='btn btn-warning'>MAKE A DEPOSIT</a>
+                        <a href='/deposit' className='btn btn-warning'>MAKE A DEPOSIT</a>
                     </div>
                     <div className="balance__info__box">
                         <i class="fas fa-funnel-dollar fa-4x"></i>
@@ -186,20 +173,20 @@ class DashboardMain extends Component {
                 </section>
                 <section className='last__dash'>
                     <div className="last__dash__box">
-                        <div className="dash__text"><p>$0.00</p></div>
+                        <div className="dash__text"><p>$ {this.state.totalDeposit.map(user => user.depositAmount)}.00</p></div>
                         <div className="dash__text">TOTAL DEPOSITED</div>
                     </div>
                     <div className="last__dash__box">
-                        <div className="dash__text"><p>$0.00</p></div>
-                        <div className="dash__text">TOTAL DEPOSITED</div>
+                        <div className="dash__text"><p>$ {this.state.totalDeposit.map(user => user.depositAmountlast)}.00</p></div>
+                        <div className="dash__text">LAST DEPOSITED</div>
                     </div>
                     <div className="last__dash__box">
                         <div className="dash__text"><p>$0.00</p></div>
-                        <div className="dash__text">TOTAL DEPOSITED</div>
+                        <div className="dash__text">PENDING WITHDRAWAL</div>
                     </div>
                     <div className="last__dash__box">
                         <div className="dash__text"><p>$0.00</p></div>
-                        <div className="dash__text">TOTAL DEPOSITED</div>
+                        <div className="dash__text">LAST WITHDRAWAL</div>
                     </div>
                 </section>
             </div>
