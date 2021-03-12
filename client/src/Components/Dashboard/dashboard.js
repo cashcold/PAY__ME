@@ -16,6 +16,7 @@ class DashboardMain extends Component {
             bitcoin: '',
             bitcoinCash: '',
             id: '',
+            user_id: '',
             email: '',
             ethereum: '',
             date: '',
@@ -27,6 +28,12 @@ class DashboardMain extends Component {
             plan: ''
         }
         this.LogoutNow = this.LogoutNow.bind(this)
+        
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange = input => (event)=>{
+        this.setState({[input]: event.target.value})
     }
     componentDidMount(){
        
@@ -59,11 +66,13 @@ class DashboardMain extends Component {
             activetDeposit: decoded.activetDeposit,
             date: decoded.date
          }) 
-
-
-         fetch('http://localhost:8000/users/depositInfo').then(res => res.json()).then(data => this.setState({
-            totalDeposit: data
-        }))
+         
+         const id = decoded.user_id
+        
+         console.log(id)
+            axios.post('http://localhost:8000/users/depositInfo',{id}).then(data => this.setState({
+            totalDeposit: data.data
+        })).then(console.log(`This is user_id ${id}`))
 
 
 

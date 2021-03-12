@@ -182,20 +182,36 @@ Router.post('/forgotpassword', async (req,res,next)=>{
    })
 })
 
-Router.get('/depositInfo',async(req,res)=>{
-    
-   
-    const currentDeposit = await UserDeposit.aggregate([
-        {$match: {}},
-        {$group: {_id: "$user_id", depositAmount: { $sum: "$depositAmount" },depositAmountlast: { $last: "$depositAmount" }}  }
 
-    ])
-   
+
+Router.post('/depositInfo',async(req,res)=>{
+    console.log("req.body.user_id")
+    console.log(req.body.id)
+    const user = await UserDeposit.findOne({user_id: req.body.id})
+
+    if(user){
+        const currentDeposit = await UserDeposit.aggregate([
+            
+            { $match: { } },
+            {$group: {_id: "$user_id", depositAmount: { $sum: "$depositAmount" },depositAmountlast: { $last: "$depositAmount" }}  },
+           
+    
+        ])
     res.send(currentDeposit)
+    }
+    
+    
 })
+// Router.get('/depositInfo',async(req,res)=>{
+//     const currentDeposit = await UserDeposit.aggregate([
+//         {$match: {}},
+//         {$group: {_id: "$user_id", depositAmount: { $sum: "$depositAmount" },depositAmountlast: { $last: "$depositAmount" }}  }
+
+//     ])
+//    res.send(currentDeposit)
+// })
 
 Router.post('/deposit', async(req,res)=>{
-    
     
     const UserDepositNow = new UserDeposit({
         user_id: req.body.user_id,
