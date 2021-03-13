@@ -73,6 +73,7 @@ class DashboardMain extends Component {
             axios.post('http://localhost:8000/users/depositInfo',{id}).then(data => this.setState({
             totalDeposit: data.data
         })).then(console.log(`This is user_id ${id}`))
+        
 
 
 
