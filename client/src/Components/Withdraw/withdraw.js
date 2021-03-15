@@ -11,6 +11,7 @@ class WithdrawNow extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            user_id: '',
             user_Name: '',
             email: '',
             accountBalance: '',
@@ -44,6 +45,7 @@ class WithdrawNow extends Component {
         
 
         const Withdraw = { 
+            user_id: this.state.user_id,
             accountBalance: this.state.accountBalance,
             zero_accountBalance: this.state.zero_accountBalance,
             user_Name: this.state.user_Name,
@@ -52,6 +54,7 @@ class WithdrawNow extends Component {
             bitcoin: this.state.bitcoin,
             bitcoinCash: this.state.bitcoinCash,
             ethereum: this.state.ethereum,
+            
         }
         const id  = this.props.match.params.id
         console.log(Withdraw)
@@ -78,6 +81,7 @@ class WithdrawNow extends Component {
             date: DateTime
         })
         
+        const user_id =  sessionStorage.getItem('user_id')
         const user_Name =  sessionStorage.getItem('user_Name')
         const email = sessionStorage.getItem('email')
         const activetDeposit = sessionStorage.getItem('activetDeposit')
@@ -93,7 +97,8 @@ class WithdrawNow extends Component {
             bitcoin,
             bitcoinCash,
             ethereum,
-            activetDeposit
+            activetDeposit,
+            user_id
         })
         if(accountBalance < 1){
             document.querySelector('.checkBalance').innerHTML ="You have no funds to withdraw."
@@ -111,7 +116,7 @@ class WithdrawNow extends Component {
     }
    
     render() { 
-        console.log(this.state)
+        console.log(this.state.user_id)
         return ( 
             <div className='mainWidthDraw'>
                 <div className='withdraw'>

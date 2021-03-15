@@ -182,6 +182,22 @@ Router.post('/forgotpassword', async (req,res,next)=>{
    })
 })
 
+Router.post('/withdrawInfo',async(req,res)=>{
+   
+    user_id = req.body.id
+    const user = await WithdrawDeposit.findOne({user_id: req.body.id})
+
+    if(user){
+        const currentDeposit = await WithdrawDeposit.aggregate([
+            { $match : { user_id : user_id } },
+            {$group: {_id: "$user_id", WithdrawAmount: { $sum: "$accountBalance" },WithdrawAmountlast: { $last: "$accountBalance" }}  },
+            
+        ])
+    res.send(currentDeposit)
+    }
+    
+    
+})
 Router.post('/depositInfo',async(req,res)=>{
    
     user_id = req.body.id
@@ -236,8 +252,9 @@ Router.post('/withdraw/:id', async(req,res)=>{
     const user_Name = req.body.user_Name; 
     const withdrawtAmount = req.body.accountBalance
     const WithdrawNow = new WithdrawDeposit({
+    user_id: req.body.user_id,
     user_Name: req.body.user_Name,
-    accountBalance: req.body.accountBalance,
+    accountBalance: Number(req.body.accountBalance),
     zero_accountBalance: req.body.zero_accountBalance,
     email: req.body.email,
     date: req.body.date,

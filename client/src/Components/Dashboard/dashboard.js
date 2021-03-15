@@ -23,6 +23,7 @@ class DashboardMain extends Component {
             accountBalance: '',
             activetDeposit: '',
             totalDeposit: [],
+            withdrawTotal: [],
             totalDeposit_id: '',
             login: '',
             plan: ''
@@ -68,11 +69,14 @@ class DashboardMain extends Component {
          }) 
          
          const id = decoded.user_id
-        
-         console.log(id)
-            axios.post('http://localhost:8000/users/depositInfo',{id}).then(data => this.setState({
+
+         axios.post('http://localhost:8000/users/withdrawInfo',{id}).then(data => this.setState({
+            withdrawTotal: data.data
+         }))
+
+         axios.post('http://localhost:8000/users/depositInfo',{id}).then(data => this.setState({
             totalDeposit: data.data
-        })).then(console.log(`This is user_id ${id}`))
+         }))
         
 
 
@@ -97,7 +101,7 @@ class DashboardMain extends Component {
         sessionStorage.clear(); 
     }
     render() { 
-        console.log(this.state.totalDeposit)
+        console.log(this.state.withdrawTotal)
         return ( 
             <div className='dashboard__main'>
                 <ToastContainer/>
@@ -159,7 +163,7 @@ class DashboardMain extends Component {
                 <section className='blance__info'>
                     <div className="balance__info__box">
                         <i class="fas fa-file-invoice-dollar fa-4x"></i>
-                        <p className='p__text'><span className='sign__color'>$</span>0.00</p>
+                        <p className='p__text'><span className='sign__color'>$</span>  {this.state.withdrawTotal.map(user => user.WithdrawAmount)}.00</p>
                         <p>EARNED TOTAL</p>
                         <a href='/deposit' className='btn btn-warning'>MAKE A DEPOSIT</a>
                     </div>
@@ -171,9 +175,9 @@ class DashboardMain extends Component {
                     </div>
                     <div className="balance__info__box">
                         <i class="fas fa-money-check-alt fa-4x"></i>
-                        <p className='p__text'><span className='sign__color'>$</span>0.00</p>
-                        <p>WITHDREW TOTAL</p>
-                        <a href='' className='btn btn-warning'>WITHDREW TOTAL</a>
+                        <p className='p__text'><span className='sign__color'>$</span> {this.state.withdrawTotal.map(user => user.WithdrawAmount)}.00</p>
+                        <p>TOTAL WITHDREW </p>
+                        <a href='' className='btn btn-warning'>TOTAL WITHDREW</a>
                     </div>
                 </section>
                 <section className='reffer_link'>
@@ -195,7 +199,7 @@ class DashboardMain extends Component {
                         <div className="dash__text">PENDING WITHDRAWAL</div>
                     </div>
                     <div className="last__dash__box">
-                        <div className="dash__text"><p>$0.00</p></div>
+                        <div className="dash__text"><p>$  {this.state.withdrawTotal.map(user => user.WithdrawAmountlast)}.00</p></div>
                         <div className="dash__text">LAST WITHDRAWAL</div>
                     </div>
                 </section>
