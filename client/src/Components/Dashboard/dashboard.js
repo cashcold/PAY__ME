@@ -78,20 +78,17 @@ class DashboardMain extends Component {
             totalDeposit: data.data
          }))
         
-
-
-
-
-         
          const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
+
          if(activetDeposit__amount){
-             
-            if(activetDeposit__amount > 99){
-                setTimeout(()=>{
-                document.querySelector('.activetStatus').innerHTML = "0.00$"
-                document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-              },8000)
-             }
+            const time = new Date().getMinutes();
+          alert(time)
+            // if(activetDeposit__amount > 99){
+            //     setTimeout(()=>{
+            //     document.querySelector('.activetStatus').innerHTML = "0.00$"
+            //     document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+            //   },8000)
+            //  }
          }
         
         }
