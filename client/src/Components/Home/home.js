@@ -46,10 +46,9 @@ class HomeMain extends Component {
                                <img src={require('../../images/paymenticon3-min.png')}/>
                                <img src={require('../../images/paymenticon4-min.png')}/>
                                <img src={require('../../images/paymenticon5-min.png')}/>
-                               
-<a href="https://www.shift4shop.com/credit-card-logos.html"><img alt="Credit Card Logos" title="Credit Card Logos" src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-5_b.png" width="518" height="59" border="0" /></a>
-
-                           </div>
+                              <a href="https://www.shift4shop.com/credit-card-logos.html"><img alt="Credit Card Logos" title="Credit Card Logos" src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-5_b.png" width="518" height="59" border="0" /></a>
+                              <img style={{width: '300px'}} src={require('../../images/25-253162_mtn-mobile-money-logo-hd-png-download.png')}/>
+                             </div>
                        </marquee>
                     </div>
                     

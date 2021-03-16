@@ -80,7 +80,7 @@ class ConfirmDeposit extends Component {
                 <div className='confirmLine'>
                     <div className='lastConfirm'>
                         <div className='planInfo'>
-                            <p>Plan:</p>
+                            <p>Plan:</p>  
                             <p>Instant Daily Plan: {this.state.plan} Daily Forever</p>
                         </div>
                         <div className='planInfo'>
@@ -105,7 +105,7 @@ class ConfirmDeposit extends Component {
                         </div>
 
                         <div className='confirmBtnInfo'>
-                            <p>Please send exactly 0.00177447 BTC to<br/>
+                            <p>Please send exactly<span> 0.00177447</span> BTC to<br/>
                             <p className='wallertNumber'>14VoBZY3Pap6NUeTxNttspyGHBx92d1wAh</p>
                             <div className='automatic'>
                                 <img src={require('../../images/blockChain.png')} alt='pic'/>
