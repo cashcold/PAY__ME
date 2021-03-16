@@ -132,10 +132,10 @@ class DashboardMain extends Component {
                         <div className="dash__info__text">
                             <p>ACCOUNT BALANCE</p>
                             <p className='p__text balanceMe'><span className='sign__color'>$</span> {this.state.accountBalance}</p>
-                            <a href={`/withdraw/${this.state.id}`} className='btn btn-warning'>REQUEST PAYMENT</a>
+                            
                         </div>
                         <div className="dash__info__img">
-                        <i class="fas fa-wallet fa-3x"></i>
+                        <a href={`/withdraw/${this.state.id}`} className='btn btn-warning'>REQUEST PAYMENT</a>
                         </div>
                     </div>
                     <div className="about__dash__info">
