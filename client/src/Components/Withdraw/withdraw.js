@@ -58,7 +58,8 @@ class WithdrawNow extends Component {
         }
         const id  = this.props.match.params.id
         console.log(Withdraw)
-        axios.post(`http://localhost:8000/users/withdraw/${id}`,Withdraw).then(res => { 
+        // http://localhost:8000
+        axios.post(`/users/withdraw/${id}`,Withdraw).then(res => { 
             sessionStorage.setItem('RefreshToken',JSON.stringify(res.data))
             return res.data;
         }).then(res => {toast.success("Account Update") }).then(setTimeout(()=>{

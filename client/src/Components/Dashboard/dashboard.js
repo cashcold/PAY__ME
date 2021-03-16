@@ -70,11 +70,11 @@ class DashboardMain extends Component {
          
          const id = decoded.user_id
 
-         axios.post('http://localhost:8000/users/withdrawInfo',{id}).then(data => this.setState({
+         axios.post('/users/withdrawInfo',{id}).then(data => this.setState({
             withdrawTotal: data.data
          }))
-
-         axios.post('http://localhost:8000/users/depositInfo',{id}).then(data => this.setState({
+        //  http://localhost:8000
+         axios.post('/users/depositInfo',{id}).then(data => this.setState({
             totalDeposit: data.data
          }))
         
