@@ -55,9 +55,9 @@ li a:hover{
 }
 .planDeposit{
     width: 100%;
-    height: 50vh;
+    min-height: 30vh;
     background-color: #301856;
-    padding: 50px;
+    padding: 0 30em;
 }
 .hideComponent{
     display: none;
@@ -113,12 +113,15 @@ li a:hover{
     .planDeposit{
         margin-left: 10px;
         width: 100%;
-        height: 50vh;
+        min-height: 50vh;
         background-color: #301856;
+        
+        padding: 0 0em;
     }
+   
     .depositMethod{
         width: 100%;
-        height: 50vh;
+        min-height: 30vh;
         background-color: #301856;;
     }
     .mainDeposit p{
@@ -129,7 +132,7 @@ li a:hover{
     }
     .planDeposit{
         width: 100%;
-        height: 40vh;
+        min-height: 20vh;
         background-color: #301856;
         padding: 10px;
     }
@@ -141,10 +144,13 @@ li a:hover{
    }
    .amountSpend input{
     width: 150px;
-    min-height: 30px;
+    min-height: 10px;
     border-radius: 20px;
     border: none;
     outline: none;
+}
+.calculate__now{
+    margin-bottom: -12em;
 }
 }
 

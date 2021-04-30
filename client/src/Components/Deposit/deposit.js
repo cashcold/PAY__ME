@@ -138,28 +138,28 @@ class Deposit extends Component {
                             <div className=''>
                                 <div className='plan1'>
                                     <div className='planPlan'>
-                                        <h4><input  type='radio' name='planNow' value='24HRS' onChange={this.handleChange('planNow')} className='planBtn1'/> PLAN 1 </h4>
+                                        <p><input  type='radio' name='planNow' value='24HRS' onChange={this.handleChange('planNow')} className='planBtn1'/> PLAN 1 </p>
                                     </div>
                                     <p>24HRS</p>
                                 </div>
                                 <hr/>
                                 <div className='plan1'>
                                     <div className='planPlan'>           
-                                        <h4><input type='radio' name='planNow' value='3 DAYS' onChange={this.handleChange('planNow')}  className='planBtn2'/> PLAN 2 </h4>
+                                        <p><input type='radio' name='planNow' value='3 DAYS' onChange={this.handleChange('planNow')}  className='planBtn2'/> PLAN 2 </p>
                                     </div>
                                     <p>3 DAYS</p>
                                 </div>
                                 <hr/>
                                 <div className='plan1'>
                                     <div className='planPlan'>
-                                        <h4><input type='radio' name='planNow' value='5 DAYS' onChange={this.handleChange('planNow')}  className='planBtn3'/>  PLAN 3 </h4>
+                                        <p><input type='radio' name='planNow' value='5 DAYS' onChange={this.handleChange('planNow')}  className='planBtn3'/>  PLAN 3 </p>
                                     </div>
                                     <p>5 DAYS</p>
                                 </div>
                                 <hr/>
                                 <div className='plan1'>
                                     <div className='planPlan'>
-                                        <h4> <input type='radio' name='planNow' value='ONE WEEK' onChange={this.handleChange('planNow')}  className='planBtn4'/> PLAN 4 </h4>
+                                        <p> <input type='radio' name='planNow' value='ONE WEEK' onChange={this.handleChange('planNow')}  className='planBtn4'/> PLAN 4 </p>
                                     </div>
                                     <p>ONE WEEK</p>
                                 </div>
@@ -167,28 +167,28 @@ class Deposit extends Component {
                             <div className='amountSpent'>
                                 <div className='amounLimt'>
                                     <div className='amountMain'>
-                                        <h4>SPENT AMOUNT ($)</h4>
+                                        <p>SPENT AMOUNT ($)</p>
                                     </div>
-                                    <p>$20.00 - $50.00</p>
+                                    <p>$5.00 - $99.00</p>
                                 </div>
                                 <hr/>
                                 <div className='amounLimt'>
                                     <div className='amountMain'>
-                                        <h4>SPENT AMOUNT ($)</h4>
+                                        <p>SPENT AMOUNT ($)</p>
                                     </div>
-                                    <p>$50.00 - $100.00</p> 
+                                    <p>$100.00 - $299.00</p> 
                                 </div>
                                 <hr/>
                                 <div className='amounLimt'>
                                     <div className='amountMain'>
-                                        <h4>SPENT AMOUNT ($)</h4>
+                                        <p>SPENT AMOUNT ($)</p>
                                     </div>
-                                    <p>$120.00 - $300.00</p>
+                                    <p>$300.00 - $500.00</p>
                                 </div>
                                 <hr/>
                                 <div className='amounLimt'>
                                     <div className='amountMain'>
-                                        <h4>SPENT AMOUNT ($)</h4>
+                                        <p>SPENT AMOUNT ($)</p>
                                     </div>
                                     <p>VIP MEMBER</p>
                                 </div>
@@ -197,34 +197,34 @@ class Deposit extends Component {
                             <div className='dailyProfit'>
                                <div className='countProfit'>
                                     <div className='profitCount'>
-                                        <h4>DAILY PROFIT (%)</h4>
+                                        <p> PROFIT (%)</p>
                                     </div>
-                                    <p>10%</p>
+                                    <p>15%</p>
                                 </div>
                                 <hr/>
                                 <div className='countProfit'>
                                     <div className='profitCount'>
-                                        <h4>DAILY PROFIT (%)</h4>
-                                    </div>
-                                    <p>25%</p>
-                                </div>
-                                <hr/>
-                                <div className='countProfit'>
-                                    <div className='profitCount'>
-                                        <h4>DAILY PROFIT (%)</h4>
+                                        <p> PROFIT (%)</p>
                                     </div>
                                     <p>35%</p>
                                 </div>
                                 <hr/>
                                 <div className='countProfit'>
                                     <div className='profitCount'>
-                                        <h4>DAILY PROFIT (%)</h4>
+                                        <p> PROFIT (%)</p>
+                                    </div>
+                                    <p>50%</p>
+                                </div>
+                                <hr/>
+                                <div className='countProfit'>
+                                    <div className='profitCount'>
+                                        <p> PROFIT (%)</p>
                                     </div>
                                     <p>%</p>
                                 </div>
                             </div>
                         </div>
-                        <a href='/calculateProfit' target='_blank'><h4 className='calculate__now btn btn-success  calculateLink'>CALCULATE PROFIT</h4></a>
+                        <a href='/calculate' target='_blank'><h4 className='calculate__now btn btn-success  calculateLink'>CALCULATE PROFIT</h4></a>
                     </div>
                 </div>
                 <div className='depositMethod'>
@@ -242,8 +242,6 @@ class Deposit extends Component {
                     <div className='matchMethod'>
                     <div className='matchDeposit'>
                         <p><input type='radio' name='spendMehtod' value='Bitcoin' onChange={this.handleChange('walletAddress')}/> Spend funds from Bitcoin</p>
-                        <p><input type='radio' name='spendMehtod' value='BitcoinCash' onChange={this.handleChange('walletAddress')}/> Spend funds from Bitcoin Cash</p>
-                        <p><input type='radio' name='spendMehtod' value='Ethereum' onChange={this.handleChange('walletAddress')}/> Spend funds from Ethereum</p>
                     </div>
                     
                 </div>

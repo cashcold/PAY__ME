@@ -18,22 +18,22 @@ class CalCulateProfit extends Component {
        const CalculatorEngine = ()=>{
            const depsoitAmountcheck = document.querySelector('.depositAmount').value
           if( depsoitAmountcheck <= 50){
-             const Percentage = depsoitAmountcheck * 10/100
+             const Percentage = depsoitAmountcheck * 15/100
               const checkPercent = Percentage
               const OverAllProfit = Number(depsoitAmountcheck) + Number(checkPercent)
               document.querySelector('.toatlProfit').innerHTML = "$"+Percentage + " Profit After    24HRS "
-              document.querySelector('.toatlProfit').style.cssText = "font-size: 50px"
+              document.querySelector('.toatlProfit').style.cssText = "font-size: 30px"
               document.querySelector('.toatalAllMoney').innerHTML ="$"+OverAllProfit + " TOATAL PROFIT RECEIVED   "
-              document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 50px " 
+              document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 30px " 
 
             }else if(depsoitAmountcheck <=100){
                 const Percentage = depsoitAmountcheck * 25/100
                 const checkPercent = Percentage
                 const OverAllProfit = Number(depsoitAmountcheck) + Number(checkPercent)
                 document.querySelector('.toatlProfit').innerHTML = "$"+Percentage +" Profit After 3 DAYS  "
-                document.querySelector('.toatlProfit').style.cssText = "font-size: 50px"
+                document.querySelector('.toatlProfit').style.cssText = "font-size: 30px"
                document.querySelector('.toatalAllMoney').innerHTML ="$"+OverAllProfit + " TOATAL PROFIT RECEIVED   "
-              document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 50px"
+              document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 30px"
 
             }
             else if(depsoitAmountcheck <=101){
@@ -41,9 +41,9 @@ class CalCulateProfit extends Component {
                 const checkPercent = Percentage
                const OverAllProfit = Number(depsoitAmountcheck) + Number(checkPercent)
                 document.querySelector('.toatlProfit').innerHTML = "$"+Percentage +" Profit After 5 DAYS"
-                document.querySelector('.toatlProfit').style.cssText = "font-size: 50px"
+                document.querySelector('.toatlProfit').style.cssText = "font-size: 30px"
                 document.querySelector('.toatalAllMoney').innerHTML ="$"+OverAllProfit + " TOATAL PROFIT RECEIVED   "
-              document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 50px"
+              document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 30px"
 
             }
             
@@ -52,13 +52,13 @@ class CalCulateProfit extends Component {
                 const checkPercent = Percentage
                 const OverAllProfit = Number(depsoitAmountcheck) + Number(checkPercent)
                 document.querySelector('.toatlProfit').innerHTML = "$"+Percentage +" After Profit  ONE WEEK"
-                document.querySelector('.toatlProfit').style.cssText = "font-size: 50px"
+                document.querySelector('.toatlProfit').style.cssText = "font-size: 30px"
                document.querySelector('.toatalAllMoney').innerHTML ="$"+OverAllProfit + " TOATAL PROFIT RECEIVED   "
-              document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 50px"
+              document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 30px"
 
             }else{
                 document.querySelector('.toatlProfit').innerHTML = "Please Max Investment is 500$ "
-                document.querySelector('.toatlProfit').style.cssText = "font-size: 50px"
+                document.querySelector('.toatlProfit').style.cssText = "font-size: 30px"
             }
             
        }

@@ -16,6 +16,7 @@ class ConfirmDeposit extends Component {
             user_Name: '',
             full_Name: '',
             email: '',
+            amount: '',
             date: ''
         }
         this.onSubmit = this.onSubmit.bind(this)
@@ -70,7 +71,17 @@ class ConfirmDeposit extends Component {
 
    }
     render() { 
-       console.log(this.state)
+
+        const depositAmount = ()=>{
+            if(this.state.depositAmount){
+            document.querySelector('.outAmount').innerHTML =  this.state.depositAmount * 0.0000185
+        }
+            if(this.state.depositAmount){
+            document.querySelector('.outAmount1').innerHTML =  this.state.depositAmount * 0.0000185
+        }
+
+       }
+     depositAmount()
         return(
             <div className='confirm'>
                 <div className='confirmDepositNow'>
@@ -101,11 +112,11 @@ class ConfirmDeposit extends Component {
                         </div>
                         <div className='planInfo'>
                             <p>BTC Debit Amount:</p>
-                            <p>0.00177447</p>
+                            <p><span className='outAmount'></span></p>
                         </div>
 
                         <div className='confirmBtnInfo'>
-                            <p>Please send exactly<span> 0.00177447</span> BTC to<br/>
+                            <p>Please send exactly <span className='outAmount1'></span> BTC to<br/>
                             <p className='wallertNumber'>14VoBZY3Pap6NUeTxNttspyGHBx92d1wAh</p>
                             <div className='automatic'>
                                 <img src={require('../../images/blockChain.png')} alt='pic'/>

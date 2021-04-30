@@ -11,6 +11,7 @@
     "affiliate": "^3.0.2",
     "animate.css": "^4.1.0",
     "axios": "^0.19.2",
+    "date-fns": "^2.19.0",
     "formik": "^2.1.5",
     "gsap": "^3.5.0",
     "jwt-decode": "^2.2.0",

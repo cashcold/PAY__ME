@@ -4,6 +4,7 @@ import jwt_decode from 'jwt-decode'
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
+import {addDays,addMinutes} from "date-fns"
 import axios from 'axios' 
 
 class DashboardMain extends Component {
@@ -79,17 +80,29 @@ class DashboardMain extends Component {
          }))
         
          const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
+         const date = new Date();
+         const dueDate = addDays(date,1)
 
          if(activetDeposit__amount){
-            const time = new Date().getMinutes();
-          alert(time)
-            // if(activetDeposit__amount > 99){
-            //     setTimeout(()=>{
-            //     document.querySelector('.activetStatus').innerHTML = "0.00$"
-            //     document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-            //   },8000)
-            //  }
+            if(activetDeposit__amount > 99){
+                if(date == dueDate){
+                    document.querySelector('.activetStatus').innerHTML = "0.00$"
+                    document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+                    alert(dueDate)
+                }
+            }   
          }
+        //  if(activetDeposit__amount){
+        //     const date = new Date();
+        //     const dueDate = addDays(date,3)
+        //   alert(dueDate)
+        //     // if(activetDeposit__amount > 99){
+        //     //     setTimeout(()=>{
+        //     //     document.querySelector('.activetStatus').innerHTML = "0.00$"
+        //     //     document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+        //     //   },8000)
+        //     //  }
+        //  }
         
         }
 
