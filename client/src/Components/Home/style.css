@@ -71,7 +71,7 @@
    
 }
 .price{
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 800;
     color: #FFB612;
 }
@@ -334,6 +334,9 @@
 .litcoin{
     min-width: 30%;
     height: 20vh;
+}
+.bothInner a{
+    display: block;
 }
 
 @media screen and (max-width: 768px){

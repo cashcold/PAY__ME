@@ -39,17 +39,6 @@ class HomeMain extends Component {
                 draggable/>
                 <section className='home__A'>
                     <div className="flow__text">
-                    <marquee className='marqueeText'>
-                           <div className='litcoin'>
-                               <img src={require('../../images/paymenticon1-min.png')}/>
-                               <img src={require('../../images/paymenticon2-min.png')}/>
-                               <img src={require('../../images/paymenticon3-min.png')}/>
-                               <img src={require('../../images/paymenticon4-min.png')}/>
-                               <img src={require('../../images/paymenticon5-min.png')}/>
-                              <a href="https://www.shift4shop.com/credit-card-logos.html"><img alt="Credit Card Logos" title="Credit Card Logos" src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-5_b.png" width="518" height="59" border="0" /></a>
-                             
-                             </div>
-                       </marquee>
                     </div>
                     
                     <div className="welcome__info">
@@ -97,18 +86,22 @@ class HomeMain extends Component {
                    <div className='title'>Choose Your Plan</div>
                    <div className='container container__2'>
                        <div className="box box__1">
-                           <h1>10%</h1>
+                           <h1>15%</h1>
                            <h2 className='popular__1'>BEGINNER</h2>
                            <div className="price">PLAN: DAILY 24HRS</div>
                           <div className="all__plan">
                               <div className="plan__me">
                                     <i class="fas fa-handshake fa-3x"></i>
-                                    <div className="text__content">MINIMUM - 20.00 USD</div>
+                                    <div className="text__content">MINIMUM - 5.00 USD</div>
                                     <hr/>
                                     <div className="text__content">MINIMUM - 99.00 USD</div>
                               </div>
                           </div>
-                           <a href='' className='btn btn-warning'>DEPOSIT NOW</a>
+                           
+                           <div className="bothInner">
+                                <a href='' className='btn btn-warning'>DEPOSIT NOW</a>
+                                <a href='/calculate'  target='_blank' className='btn btn-warning'>Calculate</a>
+                               </div>
                        </div>
                        <div className="box box__2">
                             <h1>35%</h1>
@@ -119,10 +112,13 @@ class HomeMain extends Component {
                                    <i class="fas fa-balance-scale fa-3x"></i>
                                     <div className="text__content">MINIMUM - 100.00 USD</div>
                                     <hr/>
-                                    <div className="text__content">MINIMUM - 200.00 USD</div>
+                                    <div className="text__content">MINIMUM - 299.00 USD</div>
                               </div>
                           </div>
-                                <a href='' className='btn btn-warning'>DEPOSIT NOW</a>
+                               <div className="bothInner">
+                               <a href='' className='btn btn-warning'>DEPOSIT NOW</a>
+                                <a href='/calculate'  target='_blank' className='btn btn-warning'>Calculate</a>
+                               </div>
                        </div>
                        <div className="box box__3">
                         <h1>55%</h1>
@@ -136,7 +132,10 @@ class HomeMain extends Component {
                                     <div className="text__content">MINIMUM - 500.00 USD</div>
                               </div>
                           </div>
-                           <a href='' className='btn btn-warning'>DEPOSIT NOW</a>
+                           <div className="bothInner">
+                                <a href='' className='btn btn-warning'>DEPOSIT NOW</a>
+                                <a href='/calculate'  target='_blank' className='btn btn-warning'>Calculate</a>
+                               </div>
                        </div>
                    </div>
                 </section>
@@ -145,7 +144,7 @@ class HomeMain extends Component {
                 <section className='payitforward__flow'>
                     <div className="pay__text__flow">
                         <h1>ABOUT <span>PAYITFORWARD</span> LTD</h1>
-                        <p>Looking for highest returns on your investments? PayItForward Ltd is an automatic online investment platform, part of PayItForward Ltd, team of professional traders focusing mainly on Perfectmoney, Payeer, Bitcoin and other crypto currencies trading over multiple Exchanges and markets. Thanks to the extraordinary diversification of our investments, we are able to deliver steady income for our investors. Thanks to our company, you can become an investor in the network without any specialist knowledge. You can become a partial shareholder of PayItForward Ltd, which we buy with a minimum investment of 20.00 USD and start earning Every Day. Just choose one of the four investment plans depending on the amount you want to invest.</p>
+                        <p>Looking for highest returns on your investments? PayItForward Ltd is an automatic online investment platform, part of PayItForward Ltd, team of professional traders focusing mainly on Bitcoin and other crypto currencies trading over multiple Exchanges and markets. Thanks to the extraordinary diversification of our investments, we are able to deliver steady income for our investors. Thanks to our company, you can become an investor in the network without any specialist knowledge. You can become a partial shareholder of PayItForward Ltd, which we buy with a minimum investment of 20.00 USD and start earning Every Day. Just choose one of the four investment plans depending on the amount you want to invest.</p>
                     </div>
                     <div className="pay__img__flow">
                     <img src={require('../../images/aboutthumb-min.png')}/>
