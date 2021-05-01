@@ -33,7 +33,6 @@ class LoginMain extends Component {
             toast.warning('Enter Password')
         }
         event.preventDefault()
-        // http://localhost:3000
         axios.post( "/users/login",userLogin).then(res => { 
             sessionStorage.setItem('x-access-token',JSON.stringify(res.data))
             return res.data;

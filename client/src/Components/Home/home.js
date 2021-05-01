@@ -25,6 +25,12 @@ class HomeMain extends Component {
             },8000)
         }
         welcome__msg()
+        setTimeout(()=>{
+            toast.success(
+            <div classNmae='welcomeDash'>
+                <h2 >Welcome <span className='welName'>{this.state.user_Name}</span></h2>
+            </div>)
+       },9000)
     }
     render() { 
         return ( 

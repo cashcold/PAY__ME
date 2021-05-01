@@ -113,6 +113,9 @@
 .last__dash__box p,.p__text{
     font-size: 1em;
 }
+.welName{
+    columns: white;
+}
 
 
 @media screen and (max-width: 768px){

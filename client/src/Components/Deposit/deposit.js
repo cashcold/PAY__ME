@@ -90,8 +90,6 @@ class Deposit extends Component {
             return false
         }
 
-        console.log(DepositForm)
-
         sessionStorage.setItem('user__name', this.state.user_Name)
         sessionStorage.setItem('full_Name', this.state.full_Name)
         sessionStorage.setItem('planNow', this.state.planNow)

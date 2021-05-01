@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
+    
     user_id: {
         type: String,
         require: true,
@@ -40,9 +41,12 @@ const userSchema = new mongoose.Schema({
     date:{
         type: String,
         require: true,
-    }
+    },
     
     
+    
+},{
+    timestamps: true
 })
 
 const UserDeposit = mongoose.model('UserDeposit', userSchema)

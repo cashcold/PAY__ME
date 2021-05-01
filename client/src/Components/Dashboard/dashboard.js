@@ -27,7 +27,8 @@ class DashboardMain extends Component {
             withdrawTotal: [],
             totalDeposit_id: '',
             login: '',
-            plan: ''
+            plan: '',
+            timestamp: ''
         }
         this.LogoutNow = this.LogoutNow.bind(this)
         
@@ -39,7 +40,12 @@ class DashboardMain extends Component {
     }
     componentDidMount(){
        
-       
+       setTimeout(()=>{
+            toast.success(
+            <div classNmae='welcomeDash'>
+                <h2 >Welcome <span className='welName'>{this.state.user_Name}</span></h2>
+            </div>)
+       },9000)
 
         const RefreshToken = sessionStorage.getItem('RefreshToken')
         if(RefreshToken){
@@ -74,24 +80,35 @@ class DashboardMain extends Component {
          axios.post('/users/withdrawInfo',{id}).then(data => this.setState({
             withdrawTotal: data.data
          }))
-        //  http://localhost:8000
+
          axios.post('/users/depositInfo',{id}).then(data => this.setState({
             totalDeposit: data.data
          }))
-        
-         const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
-         const date = new Date();
-         const dueDate = addDays(date,1)
+         axios.post('/users/checkdate',{id}).then(data => this.setState({
+            timestamp: data.data.map(user => user.lastDate)
+         }))
 
-         if(activetDeposit__amount){
-            if(activetDeposit__amount > 99){
-                if(date == dueDate){
-                    document.querySelector('.activetStatus').innerHTML = "0.00$"
-                    document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-                    alert(dueDate)
-                }
-            }   
-         }
+       
+        
+        setTimeout(()=>{
+            const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
+            const date = new Date();
+            const ts = (this.state.timestamp)
+            const dueDate = addDays(date,1)
+            console.log(dueDate)
+            console.log(ts)
+   
+        },8000)
+
+        //  if(activetDeposit__amount){
+        //     if(activetDeposit__amount > 99){
+        //         if(this.state.timestamp === dueDate){
+        //             document.querySelector('.activetStatus').innerHTML = "0.00$"
+        //             document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
+                 
+        //         }
+        //     }   
+        //  }
         //  if(activetDeposit__amount){
         //     const date = new Date();
         //     const dueDate = addDays(date,3)
@@ -107,11 +124,11 @@ class DashboardMain extends Component {
         }
 
         LogoutNow = ()=>{
-        sessionStorage.removeItem('x-access-token');
-        sessionStorage.clear(); 
-    }
+            sessionStorage.removeItem('x-access-token');
+            sessionStorage.clear(); 
+        }
     render() { 
-        console.log(this.state.withdrawTotal)
+        // console.log(this.state.timestamp)
         return ( 
             <div className='dashboard__main'>
                 <ToastContainer/>
