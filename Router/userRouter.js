@@ -214,6 +214,8 @@ Router.post('/depositInfo',async(req,res)=>{
     
     
 })
+
+
 Router.post('/checkdate',async(req,res)=>{
    
     user_id = req.body.id
@@ -222,7 +224,7 @@ Router.post('/checkdate',async(req,res)=>{
     if(user){
         const currentDeposit = await UserDeposit.aggregate([
             { $match : { user_id : user_id } },
-            {$group: {_id: "$user_id",lastDate : { $last: "$date" }}  },
+            {$group: {_id: "$user_id",lastDate : { $last: "$createdAt" }}  },
             
         ])
     res.json(currentDeposit)
@@ -230,6 +232,7 @@ Router.post('/checkdate',async(req,res)=>{
     
     
 })
+
 // Router.post('/checkdate',async(req,res)=>{
    
 //     user_id = req.body.id
@@ -238,14 +241,15 @@ Router.post('/checkdate',async(req,res)=>{
 //     if(user){
 //         const currentDeposit = await UserDeposit.aggregate([
 //             { $match : { user_id : user_id } },
-//             {$group: {_id: "$createdAt", },lastDate: {$last: "$createdAt"} },
+//             {$group: {_id: "$user_id",lastDate : { $last: "$createdAt" }}  },
             
 //         ])
-//     res.send(currentDeposit)
+//     res.json(currentDeposit)
 //     }
     
     
 // })
+
 
 
 Router.post('/deposit', async(req,res)=>{

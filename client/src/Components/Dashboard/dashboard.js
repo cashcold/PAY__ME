@@ -87,14 +87,18 @@ class DashboardMain extends Component {
          axios.post('/users/checkdate',{id}).then(data => this.setState({
             timestamp: data.data.map(user => user.lastDate)
          }))
+        //  axios.post('/users/checkdate',{id}).then(data => this.setState({
+        //     timestamp: JSON.stringify(data.data.map(user => user.lastDate))
+        //  }))
 
        
         
         setTimeout(()=>{
             const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
-            const date = new Date();
+            const date = new Date(`${this.state.timestamp}`);
             const ts = (this.state.timestamp)
-            const dueDate = addDays(date,1)
+            const dueDate = addDays(date,4)
+            console.log(date)
             console.log(dueDate)
             console.log(ts)
    
@@ -131,9 +135,18 @@ class DashboardMain extends Component {
         // console.log(this.state.timestamp)
         return ( 
             <div className='dashboard__main'>
-                <ToastContainer/>
+                {/* <ToastContainer/> */}
+                <ToastContainer
+                position="top-center"
+                autoClose={false}
+                newestOnTop
+                closeOnClick
+                rtl
+                pauseOnFocusLoss
+                draggable/>
                 <section className='dash__box__1'>
                     <h1>MY <span>DASHBOARD</span></h1>
+                        <h1>{this.state.timestamp}</h1>
                 </section>
                 <section className='dash__links'>
                     <div className="linkDash">
