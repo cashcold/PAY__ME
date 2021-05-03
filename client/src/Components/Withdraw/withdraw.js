@@ -39,7 +39,7 @@ class WithdrawNow extends Component {
     WithdrawNowFound = ()=>{
         this.setState({accountBalance: '0'})
         setTimeout(()=>
-        {toast.success(`Payment of $${this.state.activetDeposit} Have sent to you ${this.state.bitcoin}`)},800)
+        {toast.success(`Payment Have Sent to Your Bitcoin Wallert ${this.state.bitcoin}`)},800)
 
         // sessionStorage.removeItem('token')
         

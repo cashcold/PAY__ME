@@ -93,37 +93,56 @@ class DashboardMain extends Component {
 
        
         
-        setTimeout(()=>{
+            setTimeout(()=>{
             const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
             const date = new Date(`${this.state.timestamp}`);
-            const ts = (this.state.timestamp)
-            const dueDate = addDays(date,4)
+            const today_date = new Date();
+            const date_24hrs = addMinutes(date,4)
+            // const date = new Date(`${this.state.timestamp}`).getTime();
+            // const today_date = new Date().getTime();
+            // const date_24hrs = addMinutes(date,4).getTime()
             console.log(date)
-            console.log(dueDate)
-            console.log(ts)
-   
-        },8000)
+            console.log(date_24hrs)
+            console.log(today_date)
 
-        //  if(activetDeposit__amount){
-        //     if(activetDeposit__amount > 99){
-        //         if(this.state.timestamp === dueDate){
-        //             document.querySelector('.activetStatus').innerHTML = "0.00$"
-        //             document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-                 
-        //         }
-        //     }   
-        //  }
-        //  if(activetDeposit__amount){
-        //     const date = new Date();
-        //     const dueDate = addDays(date,3)
-        //   alert(dueDate)
-        //     // if(activetDeposit__amount > 99){
-        //     //     setTimeout(()=>{
-        //     //     document.querySelector('.activetStatus').innerHTML = "0.00$"
-        //     //     document.querySelector('.balanceMe').innerHTML = "$"+activetDeposit__amount+".00"
-        //     //   },8000)
-        //     //  }
-        //  }
+                if(activetDeposit__amount){
+                    if(activetDeposit__amount < 99){
+                      if(date > today_date  ){
+                            document.querySelector('.activetStatus').innerHTML = "0.00$"
+                            document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
+                        
+                        }else{
+                        
+                        }
+                    }
+                }
+          
+   
+            },5000)
+        
+            // setTimeout(()=>{
+            // const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
+            // const date = new Date(`${this.state.timestamp}`);
+            // const date_24hrs = addDays(date,1)
+            // const date_3days = addDays(date,3)
+            // const date_week = addDays(date,5)
+            // console.log(date)
+            // console.log(date_24hrs)
+
+            //     if(activetDeposit__amount){
+            //         if(activetDeposit__amount < 99){
+            //             if(date == date_24hrs){
+            //                 document.querySelector('.activetStatus').innerHTML = "0.00$"
+            //                 document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
+                        
+            //             }
+            //         }   
+            //     }
+          
+   
+            // },9000)
+
+         
         
         }
 
