@@ -17,7 +17,7 @@ class CalCulateProfit extends Component {
     render() { 
        const CalculatorEngine = ()=>{
            const depsoitAmountcheck = document.querySelector('.depositAmount').value
-          if( depsoitAmountcheck <= 50){
+          if( depsoitAmountcheck < 99){
              const Percentage = depsoitAmountcheck * 15/100
               const checkPercent = Percentage
               const OverAllProfit = Number(depsoitAmountcheck) + Number(checkPercent)
@@ -26,8 +26,8 @@ class CalCulateProfit extends Component {
               document.querySelector('.toatalAllMoney').innerHTML ="$"+OverAllProfit + " TOATAL PROFIT RECEIVED   "
               document.querySelector('.toatalAllMoney').style.cssText = "display: block; font-size: 30px " 
 
-            }else if(depsoitAmountcheck <=100){
-                const Percentage = depsoitAmountcheck * 25/100
+            }else if(depsoitAmountcheck > 100){
+                const Percentage = depsoitAmountcheck * 35/100
                 const checkPercent = Percentage
                 const OverAllProfit = Number(depsoitAmountcheck) + Number(checkPercent)
                 document.querySelector('.toatlProfit').innerHTML = "$"+Percentage +" Profit After 3 DAYS  "

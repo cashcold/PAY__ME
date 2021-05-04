@@ -97,17 +97,35 @@ class DashboardMain extends Component {
             const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
             const date = new Date(`${this.state.timestamp}`);
             const today_date = new Date();
-            const date_24hrs = addMinutes(date,4)
-            // const date = new Date(`${this.state.timestamp}`).getTime();
-            // const today_date = new Date().getTime();
-            // const date_24hrs = addMinutes(date,4).getTime()
-            console.log(date)
-            console.log(date_24hrs)
-            console.log(today_date)
+            const date_24hrs = addDays(date,1)
+            const date_3days = addDays(date,3)
+            const date_5days = addDays(date,5)
 
                 if(activetDeposit__amount){
                     if(activetDeposit__amount < 99){
-                      if(date > today_date  ){
+                      if(today_date > date_24hrs){
+                            document.querySelector('.activetStatus').innerHTML = "0.00$"
+                            document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
+                        
+                        }else{
+                        
+                        }
+                    }
+                }
+                if(activetDeposit__amount){
+                    if(activetDeposit__amount > 99){
+                      if(today_date > date_3days){
+                            document.querySelector('.activetStatus').innerHTML = "0.00$"
+                            document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
+                        
+                        }else{
+                        
+                        }
+                    }
+                }
+                if(activetDeposit__amount){
+                    if(activetDeposit__amount > 299){
+                      if(today_date > date_5days){
                             document.querySelector('.activetStatus').innerHTML = "0.00$"
                             document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
                         
@@ -120,27 +138,7 @@ class DashboardMain extends Component {
    
             },5000)
         
-            // setTimeout(()=>{
-            // const activetDeposit__amount = JSON.parse(sessionStorage.getItem('activetDeposit'))
-            // const date = new Date(`${this.state.timestamp}`);
-            // const date_24hrs = addDays(date,1)
-            // const date_3days = addDays(date,3)
-            // const date_week = addDays(date,5)
-            // console.log(date)
-            // console.log(date_24hrs)
-
-            //     if(activetDeposit__amount){
-            //         if(activetDeposit__amount < 99){
-            //             if(date == date_24hrs){
-            //                 document.querySelector('.activetStatus').innerHTML = "0.00$"
-            //                 document.querySelector('.balanceMe').innerHTML = "$ "+activetDeposit__amount+".00"
-                        
-            //             }
-            //         }   
-            //     }
-          
-   
-            // },9000)
+           
 
          
         
