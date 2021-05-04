@@ -90,7 +90,7 @@ class RegisterUser extends Component {
         toast.error('Please Fill All Field')
         return false;
         }
-        if(!SaveNewUser.bitcoin && !SaveNewUser.bitcoinCash && !SaveNewUser.ethereum){
+        if(!SaveNewUser.bitcoin){
             toast.warn('Provide Bitcoin Address Wallet')
             return false;
         }
@@ -134,12 +134,6 @@ class RegisterUser extends Component {
                                 </tr>
                                 <tr>
                                     <td><input name='bitcoin'  placeholder='Bitcoin' onChange={this.handleChange('bitcoin')}/></td>
-                                </tr>
-                                <tr>
-                                    <td><input name='bitcoinCash'  placeholder='Bitcoin Cash' onChange={this.handleChange('bitcoinCash')}/></td>
-                                </tr>
-                                <tr>
-                                    <td><input name='ethereum'  placeholder='Ethereum' onChange={this.handleChange('ethereum')}/></td>
                                 </tr>
                                
                             </table>

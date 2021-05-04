@@ -163,7 +163,7 @@ class DashboardMain extends Component {
                 draggable/>
                 <section className='dash__box__1'>
                     <h1>MY <span>DASHBOARD</span></h1>
-                        <h1>{this.state.timestamp}</h1>
+                        {/* <h1>{this.state.timestamp}</h1> */}
                 </section>
                 <section className='dash__links'>
                     <div className="linkDash">
