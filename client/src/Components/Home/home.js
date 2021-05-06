@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import './style.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {TimelineLite} from 'gsap'
+import {gsap} from 'gsap'
+import{ScrollTrigger} from 'gsap/ScrollTrigger'
+import 'animate.css'
+
 class HomeMain extends Component {
     constructor(props) {
         super(props);
@@ -17,7 +22,7 @@ class HomeMain extends Component {
         const welcome__msg = ()=>{
             setTimeout(()=>{
                 toast.dark(
-                    <div className='wlcome'>
+                    <div className='wlcome animate__animated animate__slower animate__shakeX'>
                         <a href='/login' className='btn btn-login-in'>Login</a>
                         <a href='/register' className='btn btn-join-us'>Register</a>
                     </div>
@@ -25,6 +30,131 @@ class HomeMain extends Component {
             },8000)
         }
         welcome__msg()
+
+        const RegisterHomeTrigger = ()=>{
+            gsap.registerPlugin(ScrollTrigger)
+            const about__pay = document.querySelector('.about__pay')
+            const aboutMe_1 = document.querySelector('.aboutMe_1')
+            const aboutMe_2 = document.querySelector('.aboutMe_2')
+            const aboutMe_3 = document.querySelector('.aboutMe_3')
+            const aboutMe_4 = document.querySelector('.aboutMe_4')
+            const about__payTl =  new TimelineLite({
+                scrollTrigger: {
+                    trigger:  about__pay,
+                    start: "20px 20%",
+                    scrub: false,
+                    toggleActions: "restart none none none",
+                }
+            })
+            about__payTl.from(aboutMe_1,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+            about__payTl.from(aboutMe_2,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', })
+            about__payTl.from(aboutMe_3,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+            about__payTl.from(aboutMe_4,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+
+
+            const about__investmentt__plan = document.querySelector('.about__investmentt__plan')
+            const header__text = document.querySelector('.header__text')
+            const title = document.querySelector('.title')
+            const box = document.querySelectorAll('.box')
+            const about__investmentt__planTl =  new TimelineLite({
+                scrollTrigger: {
+                    trigger:  about__investmentt__plan,
+                    start: "20px 20%",
+                    scrub: false,
+                    toggleActions: "restart none none none",
+                }
+            })
+            about__investmentt__planTl.from(header__text,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+            about__investmentt__planTl.from(title,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', })
+            about__investmentt__planTl.from(box,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', stagger: 0.3})
+
+            const payitforward__flow = document.querySelector('.payitforward__flow')
+            const pay__text__flow = document.querySelector('.pay__text__flow')
+            const pay__img__flow = document.querySelector('.pay__img__flow')
+            const payitforward__flowTl =  new TimelineLite({
+                scrollTrigger: {
+                    trigger:  payitforward__flow,
+                    start: "20px 20%",
+                    scrub: false,
+                    toggleActions: "restart none none none",
+                }
+            })
+            payitforward__flowTl.from(pay__text__flow,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+            payitforward__flowTl.from(pay__img__flow,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', })
+
+
+
+            
+            
+            const pay__pay = document.querySelector('.pay__pay')
+            const feature__me = document.querySelector('.feature__me')
+            const feature__me__1 = document.querySelector('.feature__me__1')
+            const feature__me__2 = document.querySelector('.feature__me__2')
+            const feature__me__3 = document.querySelector('.feature__me__3')
+            const feature__me__4 = document.querySelector('.feature__me__4')
+
+            const feature_meTl = new TimelineLite({
+                scrollTrigger: {
+                    trigger:  pay__pay,
+                    start: "20px 20%",
+                    scrub: false,
+                    toggleActions: "restart none none none",
+                }
+            })
+            feature_meTl.from(feature__me,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+            feature_meTl.from(feature__me__1,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", y:'800', })
+            feature_meTl.from(feature__me__2,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+            feature_meTl.from(feature__me__3,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", y:'-800', })
+            feature_meTl.from(feature__me__4,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+            
+
+
+            const how__work = document.querySelector('.how__work')
+            const howItWork = document.querySelector('.howItWork')
+            const workInfo = document.querySelectorAll('.workInfo')
+            
+            const how_workTl =  new TimelineLite({
+                scrollTrigger: {
+                    trigger:  how__work,
+                    start: "20px 20%",
+                    scrub: false,
+                    toggleActions: "restart none none none",
+                }
+            })
+            how_workTl.from(howItWork,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', })
+            how_workTl.from(workInfo,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', stagger: 0.3})
+
+
+            const reffer__comm = document.querySelector('.reffer__comm')
+            const reffer__text = document.querySelector('.reffer__text')
+            const reffer__img = document.querySelector('.reffer__img')
+            const reffer__commTl =  new TimelineLite({
+                scrollTrigger: {
+                    trigger:  reffer__comm,
+                    start: "20px 20%",
+                    scrub: false,
+                    toggleActions: "restart none none none",
+                }
+            })
+            reffer__commTl.from(reffer__text,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', })
+            reffer__commTl.from(reffer__img,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+
+
+
+            const about__payment = document.querySelector('.about__payment')
+            const payment__accept = document.querySelector('.payment__accept')
+            const about__paymentTl =  new TimelineLite({
+                scrollTrigger: {
+                    trigger:  about__payment,
+                    start: "20px 80%",
+                    scrub: false,
+                    toggleActions: "restart none none none",
+                }
+            })
+           about__paymentTl.from(payment__accept,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", y:'-800', })
+            
+        }
+        RegisterHomeTrigger()
       
     }
     render() { 
@@ -43,10 +173,10 @@ class HomeMain extends Component {
                     </div>
                     
                     <div className="welcome__info">
-                        <div className="welcome__img">
+                        <div className="welcome__img animate__animated animate__slower animate__backInLeft" >
                             <img src={require('../../images/sliderthumb-min.png')}/>
                         </div>
-                        <div className="welcome__text">
+                        <div className="welcome__text  animate__animated animate__slower animate__backInRight">
                             <h1>MAKE MONEY WITH</h1>
                             <h1 className='text__pay'>PAYITFORWARD LTD</h1>
                             <h3>GET GUARANTEED PROFIT</h3>
@@ -56,35 +186,35 @@ class HomeMain extends Component {
                 </section>
                 <section className='about__pay'>
                     <div className="about__investment">
-                        <div className="about__box__1">
+                        <div className="about__box__1 aboutMe_1">
                             <i class="fas fa-signal fa-3x"></i>
                             <h3>203</h3>
                             <h3>Now Online...</h3>
                         </div>
-                        <div className="about__box__1">
+                        <div className="about__box__1 aboutMe_2">
                             <i class="fas fa-users fa-3x"></i>
                             <h3 >751</h3>
                             <h3>Total Accounts</h3>
                         </div>
-                        <div className="about__box__1">
+                        <div className="about__box__1 aboutMe_3">
                             <i class="fas fa-hand-holding-usd fa-3x"></i>
                             <h3>$ 20914090.72</h3>
                             <h3>Total Deposited</h3>
                         </div>
-                        <div className="about__box__1">
+                        <div className="about__box__1 aboutMe_4">
                             <i class="fas fa-money-check-alt fa-3x"></i>
                             <h3>$ 12512382.51</h3>
                             <h3>Total Withdrawals</h3>
                         </div>
                     </div>
                 </section>
-                <section className='about__investmentt__plan'>
+                <section className='about__investmentt__plan  '>
                     <div className="header__text">
                         <h1>OUR <span>INVESTMENT</span> PLANS</h1>
                     </div>
                     <div className="investmentt__plan">
                          <section className='pricingNow'>
-                   <div className='title'>Choose Your Plan</div>
+                   <div className='title '>Choose Your Plan</div>
                    <div className='container container__2'>
                        <div className="box box__1">
                            <h1>15%</h1>
@@ -153,11 +283,11 @@ class HomeMain extends Component {
                 </section>
                 <section className='pay__pay'>
                 <div className="feature__payit">
-                    <div className="feature__me">
+                    <div className="feature__me animate__fadeInTopLeft">
                         <h1><span>PAYITFORWARD LTD</span> FEATURES</h1>
                     </div>
                     <div className="feature__all">
-                        <div className="feature__box">
+                        <div className="feature__box feature__me__1">
                             <div className="feature__text">
                                 <h3>24/7 CUSTOMER SUPPORT</h3>
                                 <p>We provide 24/7 customer support through e-mail and Chat box. Our representatives are always ready to help</p>
@@ -166,7 +296,7 @@ class HomeMain extends Component {
                                 <img src={require('../../images/customer-service (1).png')}/>
                             </div>
                         </div>
-                        <div className="feature__box">
+                        <div className="feature__box feature__me__2">
                             <div className="feature__text">
                                 <h3>INSTANT WITHDRAWALS</h3>
                                 <p>Our withdrawals are all processed instantly after they are requested . Minimum withdrawal is only 0.0005 BTC.</p>
@@ -175,7 +305,7 @@ class HomeMain extends Component {
                                 <img src={require('../../images/edit.png')}/>
                             </div>
                         </div>
-                        <div className="feature__box">
+                        <div className="feature__box feature__me__3">
                             <div className="feature__text">
                                 <h3>REAL COMPANY</h3>
                                 <p>Our company is registered as PayItForward Ltd Investment Services</p>
@@ -184,7 +314,7 @@ class HomeMain extends Component {
                                 <img src={require('../../images/edit.png')}/>
                             </div>
                         </div>
-                        <div className="feature__box">
+                        <div className="feature__box feature__me__4">
                             <div className="feature__text">
                                 <h3>COMODO SSL</h3>
                                 <p>Our website is secured with Comodo SSL that verifies the authenticity of our company.</p>
