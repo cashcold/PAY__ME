@@ -33,6 +33,31 @@ class HomeMain extends Component {
 
         const RegisterHomeTrigger = ()=>{
             gsap.registerPlugin(ScrollTrigger)
+            const home__A = document.querySelector('.home__A')
+            const welcome__img = document.querySelector('.welcome__img')
+            const home__h1__1 = document.querySelector('.home__h1__1')
+            const text__pay = document.querySelector('.text__pay')
+            const home__h3__1 = document.querySelector('.home__h3__1')
+            const home__btn__1 = document.querySelector('.home__btn__1')
+
+            const home_ATl  =  new TimelineLite({
+                scrollTrigger: {
+                    trigger:  home__A,
+                    start: "0px 80%",
+                    scrub: false,
+                    toggleActions: "restart none none none",
+                }
+            })                       
+
+            home_ATl.from(welcome__img,{opacity: 0, duration: 1.3, ease: "slow(0.4, 0.7, false)", x:'-800', })
+            home_ATl.from( home__h1__1,{opacity: 0, duration: 1.3, ease: "slow(0.4, 0.7, false)", x:'800', })
+            home_ATl.from(text__pay,{opacity: 0, duration: 1.3, ease: "slow(0.4, 0.7, false)", x:'-800', })
+            home_ATl.from(home__h3__1,{opacity: 0, duration: 1.3, ease: "slow(0.4, 0.7, false)", x:'800', })
+            home_ATl.from(home__btn__1,{opacity: 0, duration: 1.3, ease: "slow(0.4, 0.7, false)", x:'-800', })
+
+
+
+
             const about__pay = document.querySelector('.about__pay')
             const aboutMe_1 = document.querySelector('.aboutMe_1')
             const aboutMe_2 = document.querySelector('.aboutMe_2')
@@ -41,7 +66,7 @@ class HomeMain extends Component {
             const about__payTl =  new TimelineLite({
                 scrollTrigger: {
                     trigger:  about__pay,
-                    start: "20px 20%",
+                    start: "10px 40%",
                     scrub: false,
                     toggleActions: "restart none none none",
                 }
@@ -59,7 +84,7 @@ class HomeMain extends Component {
             const about__investmentt__planTl =  new TimelineLite({
                 scrollTrigger: {
                     trigger:  about__investmentt__plan,
-                    start: "20px 20%",
+                    start: "-30px 20%",
                     scrub: false,
                     toggleActions: "restart none none none",
                 }
@@ -74,7 +99,7 @@ class HomeMain extends Component {
             const payitforward__flowTl =  new TimelineLite({
                 scrollTrigger: {
                     trigger:  payitforward__flow,
-                    start: "20px 20%",
+                    start: "10px 50%",
                     scrub: false,
                     toggleActions: "restart none none none",
                 }
@@ -96,7 +121,7 @@ class HomeMain extends Component {
             const feature_meTl = new TimelineLite({
                 scrollTrigger: {
                     trigger:  pay__pay,
-                    start: "20px 20%",
+                    start: "10px 50%",
                     scrub: false,
                     toggleActions: "restart none none none",
                 }
@@ -116,7 +141,7 @@ class HomeMain extends Component {
             const how_workTl =  new TimelineLite({
                 scrollTrigger: {
                     trigger:  how__work,
-                    start: "20px 20%",
+                    start: "10px 50%",
                     scrub: false,
                     toggleActions: "restart none none none",
                 }
@@ -131,7 +156,7 @@ class HomeMain extends Component {
             const reffer__commTl =  new TimelineLite({
                 scrollTrigger: {
                     trigger:  reffer__comm,
-                    start: "20px 20%",
+                    start: "10px 50%",
                     scrub: false,
                     toggleActions: "restart none none none",
                 }
@@ -146,7 +171,7 @@ class HomeMain extends Component {
             const about__paymentTl =  new TimelineLite({
                 scrollTrigger: {
                     trigger:  about__payment,
-                    start: "20px 80%",
+                    start: "20px 50%",
                     scrub: false,
                     toggleActions: "restart none none none",
                 }
@@ -171,16 +196,16 @@ class HomeMain extends Component {
                 <section className='home__A'>
                     <div className="flow__text">
                     </div>
-                    
+                    {/* animate__animated animate__slower animate__backInLeft */}
                     <div className="welcome__info">
-                        <div className="welcome__img animate__animated animate__slower animate__backInLeft" >
+                        <div className="welcome__img " >
                             <img src={require('../../images/sliderthumb-min.png')}/>
                         </div>
-                        <div className="welcome__text  animate__animated animate__slower animate__backInRight">
-                            <h1>MAKE MONEY WITH</h1>
+                        <div className="welcome__text  ">
+                            <h1 className='home__h1__1'>MAKE MONEY WITH</h1>
                             <h1 className='text__pay'>PAYITFORWARD LTD</h1>
-                            <h3>GET GUARANTEED PROFIT</h3>
-                            <a href='' className='btn btn-warning'>START NOW</a>
+                            <h3  className='home__h3__1'>GET GUARANTEED PROFIT</h3>
+                            <a href='/login' className='btn btn-warning home__btn__1'>START NOW</a>
                         </div>
                     </div>
                 </section>
@@ -348,7 +373,7 @@ class HomeMain extends Component {
                             <div className='workInfo'>
                             <i class="fas fa-money-bill-alt fa-3x showIcon"></i>
                                 <h3>MAKE A DEPOSIT</h3>
-                                <p>Your can do this from the deposit section of your account. There are 2 investment plans ranging from 10% Daily profit  (Lifetime) .You Can Withdrawal Anytime Any Where any Amount.All Withdrawal Will be Instant.</p>
+                                <p>Your can do this from the deposit section of your account. There are 2 investment plans ranging from 0% Daily profit  (Lifetime) .You Can Withdrawal Anytime Any Where any Amount.All Withdrawal Will be Instant.</p>
                             </div>
                             <div className='workInfo'>
                                 <i class="fas fa-american-sign-language-interpreting fa-3x showIcon"></i>
