@@ -5,6 +5,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { ToastContainer } from 'react-toastify';
 import {addDays,addMinutes} from "date-fns"
+import 'react-toastify/dist/ReactToastify.css';
+import {TimelineLite} from 'gsap'
+import {gsap} from 'gsap'
+import{ScrollTrigger} from 'gsap/ScrollTrigger'
 import axios from 'axios' 
 
 class DashboardMain extends Component {
@@ -137,10 +141,98 @@ class DashboardMain extends Component {
           
    
             },5000)
-        
-           
 
-         
+            const RegisterDashboardTrigger = ()=>{
+                gsap.registerPlugin(ScrollTrigger)
+
+                const dash__links = document.querySelector('.dash__links')
+                const dashLinks__me = document.querySelectorAll('.dashLinks__me')
+
+                const dash_linkTl =  new TimelineLite({
+                    scrollTrigger: {
+                        trigger:  dash__links,
+                        start: "10px 80%",
+                        scrub: false,
+                        toggleActions: "restart none none none",
+                    }
+                })       
+                dash_linkTl.from(dashLinks__me,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', stagger: 0.3})
+
+                const dash__profile = document.querySelector('.dash__profile')
+                const profileDash = document.querySelector('.profileDash')
+                const profileDash__file = document.querySelector('.profileDash__file')
+                const dash__profileTl  =  new TimelineLite({
+                    scrollTrigger: {
+                        trigger: dash__profile,
+                        start: "10px 60%",
+                        scrub: false,
+                        toggleActions: "restart none none none",
+                    }
+                })    
+                dash__profileTl.from(profileDash,{opacity: 0, duration: 1.8, ease: "slow(0.7, 0.7, false)", x:'8000', }) 
+                dash__profileTl.from( profileDash__file,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', }) 
+
+
+                const about__dash = document.querySelector('.about__dash')
+                const about__dash__info__1 = document.querySelector('.about__dash__info__1')
+                const about__dash__info__2 = document.querySelector('.about__dash__info__2')
+                const about__dash__info__3 = document.querySelector('.about__dash__info__3')
+                const link__reffer = document.querySelector('.link__reffer')
+                const about__dashTl  =  new TimelineLite({
+                    scrollTrigger: {
+                        trigger: about__dash,
+                        start: "10px 50%",
+                        scrub: false,
+                        toggleActions: "restart none none none",
+                    }
+                })
+                about__dashTl.from(about__dash__info__1,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', }) 
+                about__dashTl.from(about__dash__info__2,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', }) 
+                about__dashTl.from(about__dash__info__3,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', }) 
+                about__dashTl.from(link__reffer,{opacity: 0, duration: 1.5, ease: "slow(0.7, 0.7, false)", x:'800', }) 
+
+
+                const blance__info = document.querySelector('.blance__info')
+                const balance__info__box__1 = document.querySelector('.balance__info__box__1')
+                const balance__info__box__2 = document.querySelector('.balance__info__box__2')
+                const balance__info__box__3 = document.querySelector('.balance__info__box__3')
+                
+                const blance__infoTl =  new TimelineLite({
+                    scrollTrigger: {
+                        trigger:  blance__info,
+                        start: "20px 50%",
+                        scrub: false,
+                        toggleActions: "restart none none none",
+                    }
+                })
+                blance__infoTl.from(balance__info__box__1,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', }) 
+                blance__infoTl.from(balance__info__box__2,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', }) 
+                blance__infoTl.from(balance__info__box__3,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', }) 
+                
+
+
+                const last__dash = document.querySelector('.last__dash')
+                const last__dash__box__1 = document.querySelector('.last__dash__box__1')
+                const last__dash__box__2 = document.querySelector('.last__dash__box__2')
+                const last__dash__box__3 = document.querySelector('.last__dash__box__3')
+                const last__dash__box__4 = document.querySelector('.last__dash__box__4')
+
+                const last__dashTl =  new TimelineLite({
+                    scrollTrigger: {
+                        trigger:  last__dash,
+                        start: "20px 50%",
+                        scrub: false,
+                        toggleActions: "restart none none none",
+                    }
+                })
+                last__dashTl.from(last__dash__box__1,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+                last__dashTl.from(last__dash__box__2,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', })
+                last__dashTl.from(last__dash__box__3,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'800', })
+                last__dashTl.from(last__dash__box__4,{opacity: 0, duration: 1, ease: "slow(0.7, 0.7, false)", x:'-800', })
+
+
+            }
+            RegisterDashboardTrigger()
         
         }
 
@@ -162,19 +254,19 @@ class DashboardMain extends Component {
                 pauseOnFocusLoss
                 draggable/>
                 <section className='dash__box__1'>
-                    <h1>MY <span>DASHBOARD</span></h1>
+                    <h1 className='animate__animated animate__slower animate__rubberBand'>MY <span>DASHBOARD</span></h1>
                         {/* <h1>{this.state.timestamp}</h1> */}
                 </section>
                 <section className='dash__links'>
                     <div className="linkDash">
                         <ul>
-                            <li><a href='/dashboard'><i class="fas fa-user"></i> DASHBOARD</a></li>
-                            <li><a href='/deposit'><i class="fas fa-dollar-sign"></i> DEPOSIT</a></li>
-                            <li><a href=''><i class="fas fa-hand-holding-usd"></i> YOUR DEPOSITS</a></li>
-                            <li><a href=''><i class="fas fa-receipt"></i> TRANSACTIONS</a></li>
-                            <li><a href=''><i class="fas fa-money-check-alt"></i> WITHDRAW</a></li>
-                            <li><a href=''><i class="fas fa-users"></i>  REFERRALS</a></li>
-                            <li><a href='' className='btn btn-join-us'> {this.state.full_Name} &#8615;</a></li>
+                            <li className='dashLinks__me'><a href='/dashboard'><i class="fas fa-user"></i> DASHBOARD</a></li>
+                            <li className='dashLinks__me'><a href='/deposit'><i class="fas fa-dollar-sign"></i> DEPOSIT</a></li>
+                            <li className='dashLinks__me'><a href=''><i class="fas fa-hand-holding-usd"></i> YOUR DEPOSITS</a></li>
+                            <li className='dashLinks__me'><a href=''><i class="fas fa-receipt"></i> TRANSACTIONS</a></li>
+                            <li className='dashLinks__me'><a href=''><i class="fas fa-money-check-alt"></i> WITHDRAW</a></li>
+                            <li className='dashLinks__me'><a href=''><i class="fas fa-users"></i>  REFERRALS</a></li>
+                            <li className='dashLinks__me'><a href='' className='btn btn-join-us'> {this.state.full_Name} &#8615;</a></li>
                         </ul>
                     </div>
                 </section>
@@ -188,7 +280,7 @@ class DashboardMain extends Component {
                     </div>
                 </section>
                 <section className='about__dash'>
-                    <div className="about__dash__info">
+                    <div className="about__dash__info about__dash__info__1">
                         <div className="dash__info__text">
                             <p>ACCOUNT BALANCE</p>
                             <p className='p__text balanceMe'><span className='sign__color'>$</span> {this.state.accountBalance}</p>
@@ -198,7 +290,7 @@ class DashboardMain extends Component {
                         <a href={`/withdraw/${this.state.id}`} className='btn btn-warning'>REQUEST PAYMENT</a>
                         </div>
                     </div>
-                    <div className="about__dash__info">
+                    <div className="about__dash__info about__dash__info__2">
                         <div className="dash__info__text">
                             <p>REGISTRATION DATE</p>
                             <p className='p__text'>{this.state.date}</p>
@@ -207,7 +299,7 @@ class DashboardMain extends Component {
                         <i class="fas fa-calendar-alt fa-3x"></i>
                         </div>
                     </div>
-                    <div className="about__dash__info">
+                    <div className="about__dash__info about__dash__info__3">
                         <div className="dash__info__text">
                             <p>IP ADDRESS</p>
                             <p className='p__text'>{this.state.ip_address}</p>
@@ -218,19 +310,19 @@ class DashboardMain extends Component {
                     </div>
                 </section>
                 <section className='blance__info'>
-                    <div className="balance__info__box">
+                    <div className="balance__info__box balance__info__box__1">
                         <i class="fas fa-file-invoice-dollar fa-4x"></i>
                         <p className='p__text'><span className='sign__color'>$</span>  {this.state.withdrawTotal.map(user => user.WithdrawAmount)}.00</p>
                         <p>EARNED TOTAL</p>
                         <a href='/deposit' className='btn btn-warning'>MAKE A DEPOSIT</a>
                     </div>
-                    <div className="balance__info__box">
+                    <div className="balance__info__box balance__info__box__2">
                         <i class="fas fa-funnel-dollar fa-4x"></i>
                         <p className='p__text activetStatus'><span className='sign__color'>$</span> {this.state.activetDeposit}</p>
                         <p>ACTIVE DEPOSIT</p>
                         <a href='' className='btn btn-warning'>DEPOSIT LIST</a>
                     </div>
-                    <div className="balance__info__box">
+                    <div className="balance__info__box balance__info__box__3">
                         <i class="fas fa-money-check-alt fa-4x"></i>
                         <p className='p__text'><span className='sign__color'>$</span> {this.state.withdrawTotal.map(user => user.WithdrawAmount)}.00</p>
                         <p>TOTAL WITHDREW </p>
@@ -243,19 +335,19 @@ class DashboardMain extends Component {
                     </div>
                 </section>
                 <section className='last__dash'>
-                    <div className="last__dash__box">
+                    <div className="last__dash__box last__dash__box__1">
                         <div className="dash__text"><p>$ {this.state.totalDeposit.map(user => user.depositAmount)}.00</p></div>
                         <div className="dash__text">TOTAL DEPOSITED</div>
                     </div>
-                    <div className="last__dash__box">
+                    <div className="last__dash__box last__dash__box__2">
                         <div className="dash__text"><p>$ {this.state.totalDeposit.map(user => user.depositAmountlast)}.00</p></div>
                         <div className="dash__text">LAST DEPOSITED</div>
                     </div>
-                    <div className="last__dash__box">
+                    <div className="last__dash__box last__dash__box__3">
                         <div className="dash__text"><p>$0.00</p></div>
                         <div className="dash__text">PENDING WITHDRAWAL</div>
                     </div>
-                    <div className="last__dash__box">
+                    <div className="last__dash__box last__dash__box__4">
                         <div className="dash__text"><p>$  {this.state.withdrawTotal.map(user => user.WithdrawAmountlast)}.00</p></div>
                         <div className="dash__text">LAST WITHDRAWAL</div>
                     </div>

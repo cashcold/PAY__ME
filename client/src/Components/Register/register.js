@@ -114,32 +114,32 @@ class RegisterUser extends Component {
                 <div className='registerNow'> 
                     <div className='registerLogo'>
                         {/* <img src={require('../../pic/facebook_cover_photo_1.png')}/> */}
-                        <h1>PayItForward <span >WELCOMES</span> YOU</h1> 
+                        <h1  className='animate__animated animate__slower animate__jello'>PayItForward <span >WELCOMES</span> YOU</h1> 
                         <ToastContainer/>
                     </div>
                     <div className='formMain'>
                         <form>
                             <table>
                                 <tr>
-                                    <td><input type='text' name='full_Name' placeholder='full name' onChange={this.handleChange('full_Name')}/></td>
+                                    <td><input  className='animate__animated animate__slower animate__fadeInBottomLeft' type='text' name='full_Name' placeholder='full name' onChange={this.handleChange('full_Name')}/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type='text' name='user_Name'  placeholder='username' onChange={this.handleChange('user_Name')}/></td>
+                                    <td><input  className='animate__animated animate__slower animate__rotateIn ' type='text' name='user_Name'  placeholder='username' onChange={this.handleChange('user_Name')}/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type='password' name='password'  placeholder='confirm password' onChange={this.handleChange('password')}/></td>
+                                    <td><input  className='animate__animated animate__slower animate__lightSpeedInRight' type='password' name='password'  placeholder='confirm password' onChange={this.handleChange('password')}/></td>
                                 </tr>
                                 <tr>
-                                    <td><input type='email' name='email'  placeholder='email' onChange={this.handleChange('email')}/></td>
+                                    <td><input  className='animate__animated animate__slower animate__fadeInTopLeft' type='email' name='email'  placeholder='email' onChange={this.handleChange('email')}/></td>
                                 </tr>
                                 <tr>
-                                    <td><input name='bitcoin'  placeholder='Bitcoin' onChange={this.handleChange('bitcoin')}/></td>
+                                    <td><input  className='animate__animated animate__slower animate__slideInLeft' name='bitcoin'  placeholder='Bitcoin' onChange={this.handleChange('bitcoin')}/></td>
                                 </tr>
                                
                             </table>
                         </form>
                     </div>
-                    <div className='upfontLine'>
+                    <div className=' animate__animated animate__slower animate__heartBeat'>
                         <p>Your Upline:</p>
                         <p>{this.state.reffer}</p>
                     </div>

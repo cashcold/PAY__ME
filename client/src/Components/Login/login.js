@@ -50,18 +50,20 @@ class LoginMain extends Component {
         return ( 
             <div className='loginMain'>
                 <ToastContainer/>
-                <h1><span>Welcome</span> Back</h1>
+                <h1 className='animate__animated animate__slower animate__swing'><span>Welcome</span> Back</h1>
                 <section className='loginNow'>
                     <div className='loginForm'>
                         <form className='myFormControl'>
-                            <div className='loginmyForms'>
+                            <div className='loginmyForms animate__animated animate__slower animate__backInLeft'>
                                 <input type='text'name='email' placeholder='Email' onChange={this.handleChange('email')}/>
                             </div>
-                            <div className='loginmyForms'>
+                            <div className='loginmyForms animate__animated animate__slower animate__backInRight'>
                                 <input type='email' name='password' placeholder='confirm password'  onChange={this.handleChange('password')}/>
                             </div>
-                            <a href='' className='btn btn-success contactBtn'  onClick={this.onSubmit}>Login</a>
+                            <div className="allLogin  animate__animated animate__slower animate__backInUp">
+                                <a href='' className='btn btn-success contactBtn'  onClick={this.onSubmit}>Login</a>
                             <a href='/forgotpassword' className='btn btn-warning contactBtn'>Forgot Password</a>
+                            </div>
                         </form>
                     </div>
                 </section>
