@@ -317,9 +317,6 @@
 .payment__accept{
     margin: 8em;
     padding: 4em 0;
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    grid-gap: 20px;
 
    
 }
@@ -337,6 +334,9 @@
 }
 .bothInner a{
     display: block;
+}
+.home__main span{
+    color: #FFB612;
 }
 
 @media screen and (max-width: 768px){

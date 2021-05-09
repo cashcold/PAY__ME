@@ -214,7 +214,7 @@ class HomeMain extends Component {
                         <div className="about__box__1 aboutMe_1">
                             <i class="fas fa-signal fa-3x"></i>
                             <h3>203</h3>
-                            <h3>Now Online...</h3>
+                            <h3>Now Online...</h3>z
                         </div>
                         <div className="about__box__1 aboutMe_2">
                             <i class="fas fa-users fa-3x"></i>
@@ -431,13 +431,10 @@ class HomeMain extends Component {
                     </div>
                 </section>
                 <section className='about__payment'>
-                    <div className="payment__accept">
+                   <div className="payment__accept">
+                         <h1><span>WE</span> ACCEPT</h1>
                          <img src={require('../../images/paymenticon1-min.png')}/>
-                         <img src={require('../../images/paymenticon2-min.png')}/>
-                         <img src={require('../../images/paymenticon3-min.png')}/>
-                         <img src={require('../../images/paymenticon4-min.png')}/>
-                         <img src={require('../../images/paymenticon5-min.png')}/>
-                         <img src={require('../../images/paymenticon6-min.png')}/>
+                       
                     </div>
                 </section>
                 <section>
