@@ -358,6 +358,11 @@
         color: white;
         display: grid;
         grid-template-columns: repeat(1,1fr);
+        grid-template-areas: 
+        'welcome__text';
+    }
+    .welcome__text{
+        grid-area: welcome__text;
     }
     .welcome__text {
         margin-left: -1em;

@@ -199,9 +199,9 @@ class HomeMain extends Component {
                     {/* animate__animated animate__slower animate__backInLeft */}
                     <div className="welcome__info">
                         <div className="welcome__img " >
-                            <img src={require('../../images/sliderthumb-min.png')}/>
+                            <img src={require('../../images/sliderthumb-min.png')}/> 
                         </div>
-                        <div className="welcome__text  ">
+                        <div className="welcome__text">
                             <h1 className='home__h1__1'>MAKE MONEY WITH</h1>
                             <h1 className='text__pay'>PAYITFORWARD LTD</h1>
                             <h3  className='home__h3__1'>GET GUARANTEED PROFIT</h3>
