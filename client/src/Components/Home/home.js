@@ -31,8 +31,8 @@ class HomeMain extends Component {
         }
         welcome__msg()
 
-        const RegisterHomeTrigger = ()=>{
-            gsap.registerPlugin(ScrollTrigger)
+       const RegisterHomeTrigger = () =>{
+
             const home__A = document.querySelector('.home__A')
             const welcome__img = document.querySelector('.welcome__img')
             const home__h1__1 = document.querySelector('.home__h1__1')
@@ -294,7 +294,7 @@ class HomeMain extends Component {
                                </div>
                        </div>
                    </div>
-                </section>
+                 </section>
                     </div>
                 </section>
                 <section className='payitforward__flow'>
