@@ -116,7 +116,7 @@ class ConfirmDeposit extends Component {
                         </div>
 
                         <div className='confirmBtnInfo'>
-                            <p> <p>Kindly use your User Name <span>{this.state.user_Name}</span><br/> as Reference ID or Description ID when making payment </p> <br/>Please send exactly <span className='outAmount1'></span> BTC to<br/>
+                            <p> <p>Kindly use your User Name <span>{this.state.user_Name}</span><br/> as Reference ID or Description ID when making Payment </p> <br/>Please send exactly <span className='outAmount1'></span> BTC to<br/>
                             <p className='wallertNumber'>14VoBZY3Pap6NUeTxNttspyGHBx92d1wAh</p>
                             <div className='automatic'>
                                 <img src={require('../../images/blockChain.png')} alt='pic'/>
